@@ -8,34 +8,36 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 		<!-- Bootstrap CSS --> 
-		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
 		<!-- Owl Theme Default CSS --> 
-		<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+		<link rel="stylesheet" href="{{ asset('assets/css/owl.theme.default.min.css')}}">
 		<!-- Owl Carousel CSS --> 
-		<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+		<link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css')}}">
 		<!-- Owl Magnific CSS --> 
-		<link rel="stylesheet" href="assets/css/magnific-popup.css">
+		<link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css')}}">
 		<!-- Animate CSS --> 
-		<link rel="stylesheet" href="assets/css/animate.css">
+		<link rel="stylesheet" href="{{ asset('assets/css/animate.css')}}">
 		<!-- Boxicons CSS --> 
-		<link rel="stylesheet" href="assets/css/boxicons.min.css"> 
+		<link rel="stylesheet" href="{{ asset('assets/css/boxicons.min.css')}}">  
 		<!-- Flaticon CSS --> 
-		<link rel="stylesheet" href="assets/css/flaticon.css">
+		<link rel="stylesheet" href="{{ asset('assets/css/flaticon.css')}}">
 		<!-- Meanmenu CSS -->
-		<link rel="stylesheet" href="assets/css/meanmenu.css">
+		<link rel="stylesheet" href="{{ asset('assets/css/meanmenu.css')}}">
 		<!-- Nice Select CSS -->
-		<link rel="stylesheet" href="assets/css/nice-select.css">
+		<link rel="stylesheet" href="{{ asset('assets/css/nice-select.css')}}">
 		<!-- Odometer CSS-->
-		<link rel="stylesheet" href="assets/css/odometer.css">
+		<link rel="stylesheet" href="{{ asset('assets/css/odometer.css')}}">
 		<!-- Style CSS -->
-		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
 		<!-- Responsive CSS -->
-		<link rel="stylesheet" href="assets/css/responsive.css">
+		<link rel="stylesheet" href="{{ asset('assets/css/responsive.css')}}">
 		
 		<!-- Favicon -->
-		<link rel="icon" type="image/png" href="assets/img/favicon.png">
+		<link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png')}}">
 		<!-- Title -->
-		<title>EFA KSA</title>
+		<meta name="csrf-token" content="{{ csrf_token() }}">
+
+        <title>{{ config('app.name', 'Laravel') }}</title>
     </head>
 
     <body>
@@ -57,7 +59,7 @@
 			<!-- Menu For Mobile Device -->
 			<div class="mobile-nav">
 				<a href="index.html" class="logo">
-					<img src="assets/img/efa/logoen.png" width="600px" height="auto" alt="Logo">
+					<img src="{{ asset('assets/img/efa/logoen.png')}}" width="600px" height="auto" alt="Logo">
 				</a>
 			</div>
 
@@ -66,7 +68,7 @@
 				<div class="container-fluid">
 					<nav class="navbar navbar-expand-md">
 						<a class="navbar-brand" href="index.html">
-							<img src="assets/img/efa/logoen.png" width="300px" height="auto" alt="Logo">
+							<img src="{{ asset('assets/img/efa/logoen.png')}}" width="300px" height="auto" alt="Logo">
 						</a>
 						<div class="collapse navbar-collapse mean-menu">
 							
@@ -79,12 +81,12 @@
                                 
 								
 								<div class="register">
-									<a href="lang/ar" class="default-btn">
+									<a href="{{ url('lang/ar')}}" class="default-btn">
 										Arabic
 									</a>
 								</div>	
 								<div class="register">
-									<a href="lang/en" class="default-btn">
+									<a href="{{ url('lang/en')}}" class="default-btn">
 										English
 									</a>
 								</div>	
@@ -139,35 +141,57 @@
 		
 
         <!-- Jquery-3.5.1.Slim.Min.JS -->
-        <script src="assets/js/jquery-3.5.1.slim.min.js"></script>
+        <script src="{{ asset('assets/js/jquery-3.5.1.slim.min.js') }} "></script>
         <!-- Popper JS -->
-        <script src="assets/js/popper.min.js"></script>
+        <script src="{{ asset('assets/js/popper.min.js')}}"></script>
         <!-- Bootstrap JS -->
-        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="{{ asset('assets/js/bootstrap.min.js')}}"></script>
         <!-- Meanmenu JS -->
-		<script src="assets/js/jquery.meanmenu.js"></script>
+		<script src="{{ asset('assets/js/jquery.meanmenu.js')}}"></script>
         <!-- Wow JS -->
-        <script src="assets/js/wow.min.js"></script>
+        <script src="{{ asset('assets/js/wow.min.js')}}"></script>
         <!-- Owl Carousel JS -->
-		<script src="assets/js/owl.carousel.js"></script>
+		<script src="{{ asset('assets/js/owl.carousel.js')}}"></script>
         <!-- Owl Magnific JS -->
-		<script src="assets/js/jquery.magnific-popup.min.js"></script>
+		<script src="{{ asset('assets/js/jquery.magnific-popup.min.js')}}"></script>
         <!-- Nice Select JS -->
-		<script src="assets/js/jquery.nice-select.min.js"></script>
+		<script src="{{ asset('assets/js/jquery.nice-select.min.js')}}"></script>
 		<!-- Parallax JS --> 
-		<script src="assets/js/parallax.min.js"></script>
+		<script src="{{ asset('assets/js/parallax.min.js')}}"></script>
 		<!-- Appear JS --> 
-        <script src="assets/js/jquery.appear.js"></script>
+        <script src="{{ asset('assets/js/jquery.appear.js')}}"></script>
 		<!-- Odometer JS --> 
-		<script src="assets/js/odometer.min.js"></script>
+		<script src="{{ asset('assets/js/odometer.min.js')}}"></script>
 		<!-- Form Validator JS -->
-		<script src="assets/js/form-validator.min.js"></script>
+		<script src="{{ asset('assets/js/form-validator.min.js')}}"></script>
 		<!-- Contact JS -->
-		<script src="assets/js/contact-form-script.js"></script>
+		<script src="{{ asset('assets/js/contact-form-script.js')}}"></script>
 		<!-- Ajaxchimp JS -->
-		<script src="assets/js/jquery.ajaxchimp.min.js"></script>
+		<script src="{{ asset('assets/js/jquery.ajaxchimp.min.js')}}"></script>
         <!-- Custom JS -->
-		<script src="assets/js/custom.js"></script>
+		<script src="{{ asset('assets/js/custom.js')}}"></script>
+		
+
+		<script>
+$(document).ready(function() {
+	var max_fields      = 10; //maximum input boxes allowed
+	var wrapper   		= $(".input_fields_wrap"); //Fields wrapper
+	var add_button      = $(".add_field_button"); //Add button ID
+	
+	var x = 1; //initlal text box count
+	$(add_button).click(function(e){ //on add input button click
+		e.preventDefault();
+		if(x < max_fields){ //max input box allowed
+			x++; //text box increment
+			$(wrapper).append('<div class="col-12"><div class="form-group"><textarea name="branch[]" class="form-control" id="branch" cols="30" rows="10" required data-error="Write your message"></textarea><div class="help-block with-errors"></div></div> <a href="#" class="remove_field">Remove</a></div>'); //add input box
+		}
+	});
+	
+	$(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+		e.preventDefault(); $(this).parent('div').remove(); x--;
+	})
+});
+			</script>
     </body>
 
 <!-- Mirrored from templates.hibootstrap.com/eduon/default/log-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 21 Aug 2020 05:28:56 GMT -->

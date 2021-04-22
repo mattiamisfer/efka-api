@@ -24,7 +24,10 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
+        'first_name',
+        'middle_name',
+        'last_name',
+        'phone',
         'email',
         'password',
     ];
@@ -58,4 +61,9 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+
+    public function category() {
+        return $this->belongsToMany(Category::class);
+    }
 }

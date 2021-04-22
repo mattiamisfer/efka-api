@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LocalizationController;
+use App\Models\Category;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
@@ -44,3 +45,15 @@ Route::get('/greeting/{locale}', function ($locale) {
     echo __('register.welcome');
     //
 });
+
+
+ Route::post('/store',[HomeController::class,'store'])->name('main.first');
+ Route::get('/add',[HomeController::class,'add']);
+ Route::get('/basic-info/{id}',[HomeController::class,'basic_info']);
+ Route::post('/basic-store',[HomeController::class,'basic_store'])->name('main.basic');
+ Route::get('/list/{lang}',[HomeController::class,'list'] );
+
+ Route::get('/account-details/{id}',[HomeController::class,'account_details']);
+ Route::post('/account-store',[HomeController::class,'account_store'])->name('main.account');
+ Route::get('/cr-details/{id}',[HomeController::class,'cr_details']);
+ Route::post('/cr-details',[HomeController::class,'cr_store'])->name('main.store');

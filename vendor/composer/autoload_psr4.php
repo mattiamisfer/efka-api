@@ -93,6 +93,7 @@ return array(
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
     'Brick\\Math\\' => array($vendorDir . '/brick/math/src'),
     'BaconQrCode\\' => array($vendorDir . '/bacon/bacon-qr-code/src'),
+    'Astrotomic\\Translatable\\' => array($vendorDir . '/astrotomic/laravel-translatable/src/Translatable'),
     'Asm89\\Stack\\' => array($vendorDir . '/asm89/stack-cors/src'),
     'App\\' => array($baseDir . '/app'),
 );

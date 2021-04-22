@@ -30,6 +30,17 @@ return [
     'cat_14' => 'Handmade Items',
     'cat_15' => 'Cooking',
     'cat_16' => 'Crochet and knitting',
-    'save-continue' => 'Save & Continue'
+    'save_continue' => 'Save & Continue',
+    'branch_details' => 'Branch Address',
+    'save_add_new_branch' => 'Save & Add New Branch',
+    'branch_code' => 'SWIFT/Branch Code',
+    'bank_ac' => 'Bank Account No',
+    'account_holder' => 'Account Holders Name',
+    'upload' => 'Upload',
+    'upload_bank' => 'Copy of Bank Account',
+    'upload_commercial' => 'Copy of Commercial Registry',
+    'upload_tax' => 'Copy of Tax Certificate',
+    'upload_mun' => 'Copy of Municipal License',
+    'submit'=> 'Submit'
 
 ];

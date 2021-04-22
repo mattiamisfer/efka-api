@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'f921320281ac59441591828f84da8dc96788ae08',
+    'reference' => 'fd44fa7c3fe35a3abdaaa94b9e74f8a63b1ac5a5',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -19,6 +19,15 @@
       array (
       ),
       'reference' => '9cb795bf30988e8c96dd3c40623c48a877bc6714',
+    ),
+    'astrotomic/laravel-translatable' => 
+    array (
+      'pretty_version' => 'v11.9.1',
+      'version' => '11.9.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'd853a3c34be42941dc83c5cddd9e1e98c71abae1',
     ),
     'bacon/bacon-qr-code' => 
     array (
@@ -499,7 +508,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'f921320281ac59441591828f84da8dc96788ae08',
+      'reference' => 'fd44fa7c3fe35a3abdaaa94b9e74f8a63b1ac5a5',
     ),
     'laravel/sail' => 
     array (
