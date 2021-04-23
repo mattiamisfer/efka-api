@@ -299,18 +299,18 @@ return $e->getMessage();
 
 
 
-    public function add() {
+    public function add(Request $request) {
            $article_data = [];
    
           $article_data['en'] = [
             //  'title' => $request->input('en_title'),
-              'name' => 'english',
+              'name' =>  $request->en_title,
           ];
     
        
           $article_data['ar'] = [
             //  'name' => $request->input('lt_title'),
-              'name' =>  'arabic',
+              'name' => $request->ar_title,
           ];
    
 

@@ -41,6 +41,7 @@ return [
     'upload_commercial' => 'Copy of Commercial Registry',
     'upload_tax' => 'Copy of Tax Certificate',
     'upload_mun' => 'Copy of Municipal License',
-    'submit'=> 'Submit'
+    'submit'=> 'Submit',
+    'password' =>  'Password'
 
 ];

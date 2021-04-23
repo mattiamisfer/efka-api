@@ -37,7 +37,7 @@
 		<!-- Title -->
 		<meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('app.name', 'Comming Soon') }}</title>
     </head>
 
     <body>
@@ -58,7 +58,7 @@
 		<div class="navbar-area">
 			<!-- Menu For Mobile Device -->
 			<div class="mobile-nav">
-				<a href="index.html" class="logo">
+				<a href="{{  url('/') }}" class="logo">
 					<img src="{{ asset('assets/img/efa/logoen.png')}}" width="600px" height="auto" alt="Logo">
 				</a>
 			</div>
@@ -67,7 +67,7 @@
 			<div class="main-nav">
 				<div class="container-fluid">
 					<nav class="navbar navbar-expand-md">
-						<a class="navbar-brand" href="index.html">
+						<a class="navbar-brand" href="{{  url('/') }}">
 							<img src="{{ asset('assets/img/efa/logoen.png')}}" width="300px" height="auto" alt="Logo">
 						</a>
 						<div class="collapse navbar-collapse mean-menu">
