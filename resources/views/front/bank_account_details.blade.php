@@ -67,7 +67,7 @@
 						</div>
 						</div>
 						@error('bank')
-						<div class="alert alert-danger"> Copy of Bank Account is Required
+						<div class="alert alert-danger"> {{$message}}
 
 						</div>
 					@enderror

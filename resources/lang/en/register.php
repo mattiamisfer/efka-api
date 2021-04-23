@@ -42,6 +42,7 @@ return [
     'upload_tax' => 'Copy of Tax Certificate',
     'upload_mun' => 'Copy of Municipal License',
     'submit'=> 'Submit',
-    'password' =>  'Password'
+    'password' =>  'Password',
+    'password_confirmation' => 'Password Confirmation'
 
 ];

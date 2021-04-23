@@ -33,13 +33,24 @@ class HomeController extends Controller
 
 
   try {
-    $validated = $request->validate([
-      'first_name' => 'required',
-      'middle_name' => 'required',
-      'last_name' => 'required',
-      'email' => 'required',
-      'phone' => 'required',
+  //   $validated = $request->validate([
+
+  // ]);
+
+  $validator = Validator::make($request->all(), [
+    'first_name' => 'required',
+    'middle_name' => 'required',
+    'last_name' => 'required',
+    'email' => 'required|email|unique:users',
+    'phone' => 'required',
+    'password' => 'required|min:6|confirmed',
+'password_confirmation' => 'required|min:6'
   ]);
+  if ($validator->fails()) {
+    return redirect('')
+                ->withErrors($validator)
+                ->withInput();
+}
 
   $user = new User();
 
@@ -111,14 +122,24 @@ return $e->getMessage();
       //   'account_holder' => 'required',
       //   'bank' => 'required'
       // ]);
-
-      $validator = Validator::make($request->all(), [
-           'bank_ac' => 'required',
-        'branch_code' => 'required',
-        'account_holder' => 'required',
-        'bank' => 'required|file'
-    ]);
-
+      $input = $request->all();
+   
+      $validator = Validator::make(
+          $input, 
+          [
+            'bank_ac' => 'required',
+            'branch_code' => 'required',
+            'account_holder' => 'required',
+            'bank' => 'required|mimes:jpg,jpeg,png,pdf,doc,docx|max:2000'
+          ]
+          ,[
+            'bank.required' => 'Copy of Bank Account is required',
+            'bank.mimes' => 'Only pdf,doc,docx,jpeg,png and bmp images are allowed',
+            'bank.max' => 'Sorry! Maximum allowed size for an image is 2MB',
+          ]
+      );
+     
+ 
 
     if ($validator->fails()) {
       return redirect('account-details/'.$request->user_id)
@@ -127,12 +148,7 @@ return $e->getMessage();
   }
     
         if($request->hasFile('bank')) {
-          $allowed = array('pdf','docx','doc','png', 'jpg','jpeg');
-            $extension = $request->file('bank')->extension();
-            if (!in_array($extension, $allowed)) {
-  
-                return response()->json(['status'=>false,'response'=>'invalid file type']);
-            } else {
+ 
                 $file = $request->file('bank');
               
                 // $img =  ImageManagerStatic::make($request->file('contract'));
@@ -142,9 +158,7 @@ return $e->getMessage();
                 $destinationPath = public_path() . '/bank/';
                 $file->move($destinationPath, $bank_path);
                 
-            }
-        } else {
-            $bank_path = null;
+         
         }  
   
         // 'user_id',
@@ -180,10 +194,22 @@ return $e->getMessage();
         $validator = Validator::make($request->all(), [
           'cr_number' => 'required',
       
-       'commercial' => 'required|file',
-       'muncipal' => 'required|file',
-       'tax' => 'required|file'
-   ]);
+       'commercial' => 'required|mimes:jpg,jpeg,png,pdf,doc,docx|max:2000',
+       'muncipal' => 'required|mimes:jpg,jpeg,png,pdf,doc,docx|max:2000',
+       'tax' => 'required|mimes:jpg,jpeg,png,pdf,doc,docx|max:2000'
+        ],[
+          'commercial.required' => 'Copy of Commercial Registry is required',
+          'commercial.mimes' => 'Only pdf,doc,docx,jpeg,png and bmp images are allowed',
+          'commercial.max' => 'Sorry! Maximum allowed size for an image is 2MB',
+
+          'muncipal.required' => 'Copy of Municipal License is required',
+          'muncipal.mimes' => 'Only pdf,doc,docx,jpeg,png and bmp images are allowed',
+          'muncipal.max' => 'Sorry! Maximum allowed size for an image is 2MB',
+
+          'tax.required' => 'Copy of Tax Certificate is required',
+          'tax.mimes' => 'Only pdf,doc,docx,jpeg,png and bmp images are allowed',
+          'tax.max' => 'Sorry! Maximum allowed size for an image is 2MB',
+        ]);
 
 
    if ($validator->fails()) {
@@ -194,12 +220,7 @@ return $e->getMessage();
 
            
         if($request->hasFile('commercial')) {
-          $allowed = array('pdf','docx','doc','png', 'jpg','jpeg');
-            $extension = $request->file('commercial')->extension();
-            if (!in_array($extension, $allowed)) {
-  
-                return response()->json(['status'=>false,'response'=>'invalid file type']);
-            } else {
+         
                 $file = $request->file('commercial');
               
                 // $img =  ImageManagerStatic::make($request->file('contract'));
@@ -208,20 +229,12 @@ return $e->getMessage();
                 $commercial = time() . '.' . $file->getClientOriginalExtension();
                 $destinationPath = public_path() . '/commercial/';
                 $file->move($destinationPath, $commercial);
-                
-            }
-        } else {
-            $commercial = null;
+       
         }  
 
 
         if($request->hasFile('muncipal')) {
-          $allowed = array('pdf','docx','doc','png', 'jpg','jpeg');
-            $extension = $request->file('muncipal')->extension();
-            if (!in_array($extension, $allowed)) {
-  
-                return response()->json(['status'=>false,'response'=>'invalid file type']);
-            } else {
+          
                 $file = $request->file('muncipal');
               
                 // $img =  ImageManagerStatic::make($request->file('contract'));
@@ -231,18 +244,11 @@ return $e->getMessage();
                 $destinationPath = public_path() . '/muncipal/';
                 $file->move($destinationPath, $muncipal);
                 
-            }
-        } else {
-            $muncipal = null;
+          
         }  
 
         if($request->hasFile('tax')) {
-          $allowed = array('pdf','docx','doc','png', 'jpg','jpeg');
-            $extension = $request->file('tax')->extension();
-            if (!in_array($extension, $allowed)) {
-  
-                return response()->json(['status'=>false,'response'=>'invalid file type']);
-            } else {
+    
                 $file = $request->file('tax');
               
                 // $img =  ImageManagerStatic::make($request->file('contract'));
@@ -252,9 +258,7 @@ return $e->getMessage();
                 $destinationPath = public_path() . '/tax/';
                 $file->move($destinationPath, $tax);
                 
-            }
-        } else {
-            $tax = null;
+     
         }  
         // 'cr_number',
         // 'tax',

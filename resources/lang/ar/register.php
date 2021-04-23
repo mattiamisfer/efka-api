@@ -42,7 +42,8 @@ return [
     'upload_tax' => 'نسخة من الشهادة الضريبية',
     'upload_mun' => 'نسخة من الرخصة البلدية',
     'submit'=> 'إرسال',
-    'password' => 'كلمه السر'
+    'password' => 'كلمه السر',
+    'password_confirmation' => 'تأكيد كلمة المرور'
 
 
 ];

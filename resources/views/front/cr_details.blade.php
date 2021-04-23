@@ -48,7 +48,7 @@
 								
 									</div>
 									@error('commercial')
-									<div class="alert alert-danger">Copy of Commercial Registry is required</div>
+									<div class="alert alert-danger">{{ $message }}</div>
 								@enderror
 								</div>
 								
@@ -61,8 +61,8 @@
                                         <input type="file" id="myFile" name="muncipal">
                                     </div>
 									</div>
-									@error('commercial')
-									<div class="alert alert-danger">Copy of Municipal License is required</div>
+									@error('muncipal')
+									<div class="alert alert-danger">{{ $message }}</div>
 								@enderror
 								</div>
 								
@@ -75,7 +75,7 @@
                                     </div>
 									</div>
 									@error('tax')
-									<div class="alert alert-danger">Copy of Tax Certificate is required</div>
+									<div class="alert alert-danger">{{$message}}</div>
 								@enderror
 								</div>
 	

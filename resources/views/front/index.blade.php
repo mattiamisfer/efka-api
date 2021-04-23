@@ -94,6 +94,17 @@
 											
 						</div>
 
+						<div class="col-12">
+							<div class="form-group">
+								
+								<input class="form-control" type="password" name="password_confirmation" placeholder="{{__('register.password_confirmation')}}">
+							</div>
+							@error('password_confirmation')
+							<div class="alert alert-danger">{{ $message }}</div>
+						@enderror
+											
+						</div> 
+
 
 
 
