@@ -37,7 +37,7 @@
 		<!-- Title -->
 		<meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Comming Soon') }}</title>
+        <title>{{ config('app.name', 'Comming Soon') }}...</title>
     </head>
 
     <body>
