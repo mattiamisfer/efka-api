@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\api\CattegoryController;
+use App\Http\Controllers\api\CategoryController;
 use App\Http\Controllers\api\MainuserController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Http\Request;
@@ -28,4 +28,4 @@ Route::post('/login',[MainuserController::class,'login']);
 
 
 
-Route::apiResource('/category','CattegoryController');
+Route::apiResource('/category','CategoryController');

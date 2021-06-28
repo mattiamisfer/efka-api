@@ -24,6 +24,8 @@ class CategoryController extends Controller
 
       //  return app()->getLocale();
       $category = Category::translatedIn($locale)->get();
+
+      return $category;
     }
 
     /**
