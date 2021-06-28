@@ -24,7 +24,9 @@ class MainuserController extends Controller
 
         ]) ;
         if ($validation->fails()) {
-            return response()->json($validation->errors(),202);
+            return response()->json([
+                'status'=>false,
+                $validation->errors()],202);
         }
 
         $data = $request->all();
@@ -33,6 +35,7 @@ class MainuserController extends Controller
         $user = Mainuser::create($data);
 
         $resArr = [];
+        $resArr['status'] = true;
         $resArr['user'] = $user;
         $resArr['token'] = $user->createToken('efa-application')->accessToken;
         
@@ -57,13 +60,17 @@ class MainuserController extends Controller
         if($user) {
            
             $resArr = [];
+            $resArr['status'] = true;
             $resArr['user'] = $user;
             $resArr['token'] = $user->createToken('efa-application')->accessToken;
+       
             
             return response()->json($resArr, 200,);
     
         } else {
-            return response()->json(['error' => 'Unauthorised access'.Auth::guard('guardName')], 203);
+            return response()->json([
+                'status' => false,
+                'error' => 'Unauthorised access'.Auth::guard('guardName')], 203);
         }
     }
 }
