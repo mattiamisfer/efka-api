@@ -17,6 +17,8 @@ return array(
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\LocalizationController' => $baseDir . '/app/Http/Controllers/LocalizationController.php',
+    'App\\Http\\Controllers\\api\\CategoryController' => $baseDir . '/app/Http/Controllers/api/CategoryController.php',
+    'App\\Http\\Controllers\\api\\MainuserController' => $baseDir . '/app/Http/Controllers/api/MainuserController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',

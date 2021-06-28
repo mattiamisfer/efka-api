@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\api;
-
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -17,13 +16,13 @@ class CategoryController extends Controller
     public function index()
     {
         //
+     $locale = App::currentLocale();
+ 
 
-        $locale = App::currentLocale();
+       App::setLocale($locale);
 
-        App::setLocale($locale);
-
-      //  return app()->getLocale();
-      $category = Category::translatedIn($locale)->get();
+    //   //  return app()->getLocale();
+     $category = Category::translatedIn($locale)->get();
 
       return $category;
     }
