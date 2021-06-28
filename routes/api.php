@@ -28,4 +28,4 @@ Route::post('/login',[MainuserController::class,'login']);
 
 
 
-Route::apiResource('/category','CategoryController');
+Route::apiResource('category','CategoryController');
