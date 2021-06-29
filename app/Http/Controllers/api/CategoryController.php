@@ -5,7 +5,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
-
+Use Exception;
+use Throwable;
 class CategoryController extends Controller
 {
     /**
@@ -16,15 +17,38 @@ class CategoryController extends Controller
     public function index()
     {
         //
-     $locale = App::currentLocale();
+
+        try  {
+            $locale = App::currentLocale();
  
 
-       App::setLocale($locale);
+            App::setLocale($locale);
+         
+             //   //  return app()->getLocale();
+             $results = [];
+              $category = Category::translatedIn($locale)->get();
+         
+              foreach($category as $k => $categories) {
+                  $results[]
+         =  [
+                          
+                      'id' => $categories->id,
+                      'name' => $categories->name,
+                    
+                  ]; 
+              }
+         
+              $data = [
+                  'status' => true,
+                  'data' => $results
+              ];
+            
+              return response()->json($data,200);
+        }   catch(Exception $e) {
+            return response()->json($e,500);
+          }
 
-    //   //  return app()->getLocale();
-     $category = Category::translatedIn($locale)->get();
-
-      return $category;
+  
     }
 
     /**

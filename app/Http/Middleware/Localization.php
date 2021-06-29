@@ -17,6 +17,10 @@ class Localization
      */
     public function handle(Request $request, Closure $next)
     {
+
+        $local = ($request->hasHeader('X-localization')) ? $request->header('X-localization') : 'en';
+        app()->setLocale($local);
+
         //return $next($request);
         if (session()->has('locale')) {
             App::setLocale(session()->get('locale'));

@@ -32,4 +32,4 @@ Route::post('/login',[MainuserController::class,'login']);
   //Route::apiResource('category','CategoryController');
 
 
-Route::get('/category/{locale}',[CategoryController::class,'index']);
+Route::get('category',[CategoryController::class,'index'])->middleware('Localization');;
