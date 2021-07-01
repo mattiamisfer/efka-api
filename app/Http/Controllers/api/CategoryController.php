@@ -34,6 +34,7 @@ class CategoryController extends Controller
                           
                       'id' => $categories->id,
                       'name' => $categories->name,
+                      'image' => 'https://i.ibb.co/KbF7Vvv/accessories1.png'
                     
                   ]; 
               }

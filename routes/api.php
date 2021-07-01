@@ -29,7 +29,7 @@ Route::post('/login',[MainuserController::class,'login']);
 
 
 
-  //Route::apiResource('category','CategoryController');
+  Route::apiResource('category', CategoryController::class)->middleware('Localization');
 
 
-Route::get('category',[CategoryController::class,'index'])->middleware('Localization');;
+//oute::get('category',[CategoryController::class,'index'])->middleware('Localization');;
