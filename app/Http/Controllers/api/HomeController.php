@@ -7,6 +7,7 @@ use App\Models\Home;
 use Illuminate\Http\Request;
 Use Exception;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Response;
 use Throwable;
 class HomeController extends Controller
 {
@@ -29,9 +30,9 @@ class HomeController extends Controller
              $results = [];
               $home = Home::with('products','banners')->translatedIn($locale)->get();
 
-       return $home;
+              return response()->json(['status'=>true,'response'=>$home],200);
         } catch(Exception $e) {
-
+            return response()->json($e,500);
         }
     }
 
