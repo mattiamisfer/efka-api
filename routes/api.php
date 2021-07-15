@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\api\CategoryController;
+use App\Http\Controllers\api\HomeController as ApiHomeController;
 use App\Http\Controllers\api\MainuserController;
+use App\Http\Controllers\api\SliderController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LocalizationController;
 use Illuminate\Http\Request;
@@ -30,6 +32,8 @@ Route::post('/login',[MainuserController::class,'login']);
 
 
   Route::apiResource('category', CategoryController::class)->middleware('Localization');
+  Route::apiResource('sliders',SliderController::class);
+  Route::apiResource('home',ApiHomeController::class)->middleware('Localization');
 
 
 //oute::get('category',[CategoryController::class,'index'])->middleware('Localization');;
