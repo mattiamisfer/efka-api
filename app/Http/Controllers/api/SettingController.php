@@ -60,25 +60,25 @@ class SettingController extends Controller
          
              //   //  return app()->getLocale();
              $results = [];
-          return    $settings = Setting::translatedIn($locale)->get();
+               $settings = Setting::translatedIn($locale)->get();
          
-        //       foreach($settings as $k => $settting) {
-        //           $results[]
-        //  =  [
+              foreach($settings as $k => $settting) {
+                  $results[]
+         =  [
                           
-        //               'id' => $settting->id,
-        //               'content' => $settting->name,
+                      'id' => $settting->id,
+                      'content' => $settting->name,
                       
                     
-        //           ]; 
-        //       }
+                  ]; 
+              }
          
-        //       $data = [
-        //           'status' => true,
-        //           'data' => $results
-        //       ];
+              $data = [
+                  'status' => true,
+                  'data' => $results
+              ];
             
-        //       return response()->json($data,200);
+              return response()->json($data,200);
 
 
 
