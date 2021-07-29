@@ -67,7 +67,7 @@ class SettingController extends Controller
          =  [
                           
                       'id' => $settting->id,
-                      'content' => $settting->name,
+                      'content' => $settting->content,
                       
                     
                   ]; 
