@@ -57,3 +57,5 @@ Route::get('/greeting/{locale}', function ($locale) {
  Route::post('/account-store',[HomeController::class,'account_store'])->name('main.account');
  Route::get('/cr-details/{id}',[HomeController::class,'cr_details']);
  Route::post('/cr-details',[HomeController::class,'cr_store'])->name('main.store');
+
+ Route::get('/setting',[HomeController::class,'privacy'])->name('setting.one');

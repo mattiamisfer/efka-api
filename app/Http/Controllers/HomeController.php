@@ -6,6 +6,7 @@ use App\Models\AccountDetails;
 use App\Models\BranchInfo;
 use App\Models\Category;
 use App\Models\CrDetails;
+use App\Models\Setting;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -16,7 +17,16 @@ class HomeController extends Controller
 {
     //
 
+    public function privacy() {
+      $locale = App::currentLocale();
 
+      App::setLocale($locale);
+
+    //  return app()->getLocale();
+     $setting = Setting::translatedIn($locale)->where('id',1)->get();
+    return view('front.setting',compact('setting'));
+
+  }
     public function index() {
         $locale = App::currentLocale();
 
@@ -44,7 +54,8 @@ class HomeController extends Controller
     'email' => 'required|email|unique:users',
     'phone' => 'required',
     'password' => 'required|min:6|confirmed',
-'password_confirmation' => 'required|min:6'
+'password_confirmation' => 'required|min:6',
+'checkbox' => 'required'
   ]);
   if ($validator->fails()) {
     return redirect('')

@@ -43,7 +43,8 @@ return [
     'upload_mun' => 'نسخة من الرخصة البلدية',
     'submit'=> 'إرسال',
     'password' => 'كلمه السر',
-    'password_confirmation' => 'تأكيد كلمة المرور'
-
+    'password_confirmation' => 'تأكيد كلمة المرور',
+    'agree' => 'أنا أوافق على',
+    'terms' => 'الأحكام والشروط'
 
 ];

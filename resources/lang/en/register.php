@@ -43,6 +43,8 @@ return [
     'upload_mun' => 'Copy of Municipal License',
     'submit'=> 'Submit',
     'password' =>  'Password',
-    'password_confirmation' => 'Password Confirmation'
+    'password_confirmation' => 'Password Confirmation',
+    'agree' => 'I Agree to the',
+    'terms' => 'Terms and Conditions'
 
 ];

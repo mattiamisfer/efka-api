@@ -60,7 +60,7 @@ class SettingController extends Controller
          
              //   //  return app()->getLocale();
              $results = [];
-               $settings = Setting::translatedIn($locale)->get();
+               $settings = Setting::translatedIn($locale)->where('id',$id)->get();
          
               foreach($settings as $k => $settting) {
                   $results[]

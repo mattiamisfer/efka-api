@@ -149,12 +149,26 @@
 						</div>
 						@endforeach
 						@endforeach
-				 
+						<div class="col-12">
+ 
+							<p> <label class="inline btn">
+			   <input type="checkbox" name="checkbox">   {{__('register.agree')}} <a href="{{ route('setting.one')}}"> {{__('register.terms')}}</a>
+		   </label></p>
+
+		   @error('checkbox')
+		   <div class="alert alert-danger">{{ $message }}</div>
+	   @enderror
+	 
+						</div>
 						<div class="col-12">
 							<button class="default-btn" type="submit">
 								{{__('register.save_continue')}}
 							</button>
 						</div>
+
+					
+
+						
 
 						
 					</div>
