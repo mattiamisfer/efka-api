@@ -11,9 +11,9 @@ return [
     |
     */
     'locales' => [
-       
-        'ar',
         'en',
+        'ar',
+     
     ],
 
     /*
@@ -40,7 +40,7 @@ return [
     | and never fallback to the translator one.
     |
     */
-    'locale' => 'null',
+    'locale' => null,
 
     /*
     |--------------------------------------------------------------------------
@@ -116,7 +116,7 @@ return [
     | translation model.
     |
     */
-    'useAcceptLanguageHeader' => false,
+  //  'useAcceptLanguageHeader' => false,
 
 
 

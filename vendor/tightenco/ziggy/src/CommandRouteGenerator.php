@@ -8,9 +8,12 @@ use Tightenco\Ziggy\Ziggy;
 
 class CommandRouteGenerator extends Command
 {
-    protected $signature = 'ziggy:generate {path=./resources/js/ziggy.js} {--url=} {--group=}';
+    protected $signature = 'ziggy:generate
+                            {path=./resources/js/ziggy.js : Path to the generated JavaScript file.}
+                            {--url=}
+                            {--group=}';
 
-    protected $description = 'Generate js file for including in build process';
+    protected $description = 'Generate a JavaScript file containing Ziggy’s routes and configuration.';
 
     protected $files;
 
@@ -40,9 +43,7 @@ class CommandRouteGenerator extends Command
 const Ziggy = {$payload};
 
 if (typeof window !== 'undefined' && typeof window.Ziggy !== 'undefined') {
-    for (let name in window.Ziggy.routes) {
-        Ziggy.routes[name] = window.Ziggy.routes[name];
-    }
+    Object.assign(Ziggy.routes, window.Ziggy.routes);
 }
 
 export { Ziggy };
@@ -53,7 +54,7 @@ JAVASCRIPT;
     protected function makeDirectory($path)
     {
         if (! $this->files->isDirectory(dirname(base_path($path)))) {
-            $this->files->makeDirectory(dirname(base_path($path)), 0777, true, true);
+            $this->files->makeDirectory(dirname(base_path($path)), 0755, true, true);
         }
 
         return $path;

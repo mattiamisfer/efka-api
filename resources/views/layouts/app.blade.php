@@ -59,8 +59,9 @@
 			<!-- Menu For Mobile Device -->
 			<div class="mobile-nav">
 				<a href="{{  url('/') }}" class="logo">
-					<img src="{{ asset('assets/img/efa/efalogo.png')}}" width="300" height="auto" alt="Logo">
+					<img src="{{ asset('assets/img/efa/efalogo.png')}}" width="150" height="auto" alt="Logo">
 				</a>
+				
 			</div>
 
 			<!-- Menu For Desktop Device -->

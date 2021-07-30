@@ -1729,7 +1729,7 @@
   .mobile-nav .logo {
     text-decoration: none;
     position: absolute;
-    top: 19px;
+    /* top: 19px; */
     z-index: 999;
     left: 15px;
     color: #fff;

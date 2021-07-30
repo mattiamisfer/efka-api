@@ -28,12 +28,12 @@ class HomeController extends Controller
 
   }
     public function index() {
-        $locale = App::currentLocale();
+           $locale = App::currentLocale();
 
-        App::setLocale($locale);
+            App::setLocale($locale);
 
-      //  return app()->getLocale();
-      $category = Category::translatedIn($locale)->get();
+      // app()->getLocale();
+           $category = Category::translatedIn($locale)->get();
       return view('front.index',compact('category'));
 
     }

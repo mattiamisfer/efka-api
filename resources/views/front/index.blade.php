@@ -136,14 +136,14 @@
 
 						@foreach ($chunk as $categories )
 							
-						
+						{{-- {{$categories}} --}}
 							
 					
 						<div class="col-6">
 							<div class="form-group">
 								
 								<input type="checkbox" id="vehicle1" name="category[]" value="{{$categories->id}}">
-<label for="category[]" style="font-size: 14px;">  {{$categories->name}}</label><br>
+<label for="category[]" style="font-size: 14px;">  {{$categories->name}} </label><br>
  
 							</div>
 						</div>

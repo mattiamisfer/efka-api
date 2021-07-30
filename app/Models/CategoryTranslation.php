@@ -10,7 +10,8 @@ class CategoryTranslation extends Model
     use HasFactory;
     public $timestamps = false;
 
-    protected $guarded = ['id'];
+ 
 
     protected $fillable = ['id','locale','category_id','name'];
+    protected $guarded = ['id'];
 }
