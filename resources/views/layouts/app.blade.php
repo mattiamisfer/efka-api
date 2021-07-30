@@ -59,7 +59,7 @@
 			<!-- Menu For Mobile Device -->
 			<div class="mobile-nav">
 				<a href="{{  url('/') }}" class="logo">
-					<img src="{{ asset('assets/img/efa/logoen.png')}}" width="600px" height="auto" alt="Logo">
+					<img src="{{ asset('assets/img/efa/efalogo.png')}}" width="300" height="auto" alt="Logo">
 				</a>
 			</div>
 
@@ -68,7 +68,7 @@
 				<div class="container-fluid">
 					<nav class="navbar navbar-expand-md">
 						<a class="navbar-brand" href="{{  url('/') }}">
-							<img src="{{ asset('assets/img/efa/logoen.png')}}" width="300px" height="auto" alt="Logo">
+							<img src="{{ asset('assets/img/efa/efalogo.png')}}" width="200" height="auto" alt="Logo">
 						</a>
 						<div class="collapse navbar-collapse mean-menu">
 							
