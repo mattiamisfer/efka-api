@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zxx">
+<html lang="{{       $locale = App::currentLocale(); }}" dir="{{(App::isLocale('ar') ? 'rtl' : 'ltr')}}">
     
 <!-- Mirrored from templates.hibootstrap.com/eduon/default/log-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 21 Aug 2020 05:28:56 GMT -->
 <head>
