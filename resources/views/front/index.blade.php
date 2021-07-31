@@ -26,9 +26,10 @@
 					-->
 					<span class="" aria-current="page">
 					<a href="javascript:void(0)" class="page-numbers current ">{{__('register.basic_info')}}</a></span><i class="bx bx-chevron-right"></i>
-					<a href="javascript:void(0)" class="page-numbers ">{{ __('register.branch_details')}}</a><i class="bx bx-chevron-right"></i>
-					<a href="javascript:void(0)" class="page-numbers ">{{__('register.account_details')}}</a><i class="bx bx-chevron-right"></i>
 					<a href="javascript:void(0)" class="page-numbers">{{__('register.documents')}}</a>
+					<a href="javascript:void(0)" class="page-numbers ">{{ __('register.branch_details')}}</a><i class="bx bx-chevron-right"></i>
+					{{-- <a href="javascript:void(0)" class="page-numbers ">{{__('register.account_details')}}</a><i class="bx bx-chevron-right"></i> --}}
+				
 					
 				   
 				</div>

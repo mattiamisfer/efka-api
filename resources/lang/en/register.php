@@ -31,7 +31,7 @@ return [
     'cat_15' => 'Cooking',
     'cat_16' => 'Crochet and knitting',
     'save_continue' => 'Save & Continue',
-    'branch_details' => 'Branch Address',
+    'branch_details' => 'Address & Locations',
     'save_add_new_branch' => 'Save & Add New Branch',
     'branch_code' => 'SWIFT/Branch Code',
     'bank_ac' => 'Bank Account No',
@@ -45,6 +45,8 @@ return [
     'password' =>  'Password',
     'password_confirmation' => 'Password Confirmation',
     'agree' => 'I Agree to the',
-    'terms' => 'Terms and Conditions'
+    'terms' => 'Terms and Conditions',
+    'freelancer' =>  'Freelances Certificate Copy',
+    'saudi' => 'Saudi National ID Copy'
 
 ];

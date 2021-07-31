@@ -17,10 +17,11 @@
 				-->
 				<span class="" aria-current="page">
 					<a href="javascript:void(0)" class="page-numbers ">{{__('register.basic_info')}}</a></span><i class="bx bx-chevron-right"></i>
-					<a href="javascript:void(0)" class="page-numbers current">{{ __('register.branch_details')}}</a><i class="bx bx-chevron-right"></i>
-					<a href="javascript:void(0)" class="page-numbers ">{{__('register.account_details')}}</a><i class="bx bx-chevron-right"></i>
-					<a href="javascript:void(0)" class="page-numbers">{{__('register.documents')}}</a>
-					
+				
+					<a href="javascript:void(0)" class="page-numbers">{{__('register.documents')}}</a><i class="bx bx-chevron-right"></i>
+	
+					<a href="javascript:void(0)" class="page-numbers current">{{ __('register.branch_details')}}</a>
+ 					
 				
 				
 			</div>
@@ -51,7 +52,7 @@
 
 					<div class="col-12">
 						<button class="default-btn" type="submit">
-							 {{ __('register.save_continue')}}
+							 {{ __('register.submit')}}
 						</button>
 					</div>
 

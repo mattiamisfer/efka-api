@@ -5,7 +5,7 @@ return [
 
     'welcome' =>'تسجيل أفراد العائلات',
     'basic_info' => 'معلومات أساسية',
-    'branch_details' => 'تفاصيل الفرع',
+    'branch_details' => 'العنوان والمواقع',
     'account_details' => 'تفاصيل الحساب',
     'documents' => 'وثائق',
     'first_name' => 'الاسم الأول',
@@ -45,6 +45,7 @@ return [
     'password' => 'كلمه السر',
     'password_confirmation' => 'تأكيد كلمة المرور',
     'agree' => 'أنا أوافق على',
-    'terms' => 'الأحكام والشروط'
-
+    'terms' => 'الأحكام والشروط',
+    'freelancer' =>  ' نسخة من وثيقة العمل الحر',
+    'saudi' => 'نسخة الهوية الوطنية'
 ];

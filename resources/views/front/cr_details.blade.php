@@ -15,10 +15,10 @@
 				-->
 				<span class="" aria-current="page">
 					<a href="javascript:void(0)" class="page-numbers ">{{__('register.basic_info')}}</a></span><i class="bx bx-chevron-right"></i>
-					<a href="javascript:void(0)" class="page-numbers ">{{ __('register.branch_details')}}</a><i class="bx bx-chevron-right"></i>
-					<a href="javascript:void(0)" class="page-numbers ">{{__('register.account_details')}}</a><i class="bx bx-chevron-right"></i>
-					<a href="javascript:void(0)" class="page-numbers current">{{__('register.documents')}}</a>
-				
+					<a href="javascript:void(0)" class="page-numbers current">{{__('register.documents')}}</a><i class="bx bx-chevron-right"></i>
+
+					<a href="javascript:void(0)" class="page-numbers ">{{ __('register.branch_details')}}</a>
+ 				
 				
 			</div>
 		</div>
@@ -28,21 +28,13 @@
 				@csrf
 				<input type="hidden" name="user_id" value="{{ request()->id }}">
 				 		<div class="row">
-							<div class="col-12">
-									<div class="form-group">
-										
-										<input class="form-control" type="text" name="cr_number" placeholder="CR No:">
-									</div>
-									@error('cr_number')
-									<div class="alert alert-danger">{{ $message }}</div>
-								@enderror
-								</div>
+					 
 							<h6> {{__('register.upload')}}</h6>
 								<div class="col-12">
 									<div class="form-group">
 										
 										<div class="file" style="padding-top:10px;">
-								  <p> {{__('register.upload_commercial')}}</p>
+								  <p> {{__('register.freelancer')}}</p>
                                         <input type="file" id="myFile" name="commercial">
                                     </div>
 								
@@ -57,7 +49,7 @@
 									<div class="form-group">
 										
 										<div class="file" style="padding-top:10px;">
-								  <p>{{__('register.upload_mun')}} </p>
+								  <p>{{__('register.saudi')}} </p>
                                         <input type="file" id="myFile" name="muncipal">
                                     </div>
 									</div>
@@ -66,7 +58,7 @@
 								@enderror
 								</div>
 								
-								<div class="col-12">
+								{{-- <div class="col-12">
 									<div class="form-group">
 										
 										<div class="file" style="padding-top:10px;">
@@ -77,13 +69,13 @@
 									@error('tax')
 									<div class="alert alert-danger">{{$message}}</div>
 								@enderror
-								</div>
+								</div> --}}
 	
 								
 	
 								<div class="col-12">
 									<button class="default-btn" type="submit">
-										 {{__("register.submit")}}
+										 {{__("register.save_continue")}}
 									</button>
 								</div>
 

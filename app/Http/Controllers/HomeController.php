@@ -75,7 +75,7 @@ class HomeController extends Controller
   $save = $user->save();
   $user->category()->sync($request->input('category', []));
   //return redirect()->route('/basic-info',['id'=>$user->id]); //pass your dynamic id
-  return redirect()->to('basic-info/'.$user->id); //pass your dynamic id
+  return redirect()->to('cr-details/'.$user->id); //pass your dynamic id
 
 
 
@@ -108,8 +108,10 @@ return $e;
 
           BranchInfo::create($data);
          }
+         session()->flash('msg', 'Successfully done the Registration...');
 
-         return redirect()->to('account-details/'.$request->user_id);
+          return redirect()->to('/');
+     //    return redirect()->to('account-details/'.$request->user_id);
         }
 
       } catch(\Exception $e) {
@@ -203,23 +205,21 @@ return $e->getMessage();
       try  {
 
         $validator = Validator::make($request->all(), [
-          'cr_number' => 'required',
+          
       
        'commercial' => 'required|mimes:jpg,jpeg,png,pdf,doc,docx|max:2000',
        'muncipal' => 'required|mimes:jpg,jpeg,png,pdf,doc,docx|max:2000',
-       'tax' => 'required|mimes:jpg,jpeg,png,pdf,doc,docx|max:2000'
+      
         ],[
-          'commercial.required' => 'Copy of Commercial Registry is required',
+          'commercial.required' => 'Freelances Certificate Copy is required',
           'commercial.mimes' => 'Only pdf,doc,docx,jpeg,png and bmp images are allowed',
           'commercial.max' => 'Sorry! Maximum allowed size for an image is 2MB',
 
-          'muncipal.required' => 'Copy of Municipal License is required',
+          'muncipal.required' => 'Saudi National ID Copy is required',
           'muncipal.mimes' => 'Only pdf,doc,docx,jpeg,png and bmp images are allowed',
           'muncipal.max' => 'Sorry! Maximum allowed size for an image is 2MB',
 
-          'tax.required' => 'Copy of Tax Certificate is required',
-          'tax.mimes' => 'Only pdf,doc,docx,jpeg,png and bmp images are allowed',
-          'tax.max' => 'Sorry! Maximum allowed size for an image is 2MB',
+         
         ]);
 
 
@@ -258,19 +258,28 @@ return $e->getMessage();
           
         }  
 
-        if($request->hasFile('tax')) {
+        // if($request->hasFile('tax')) {
     
-                $file = $request->file('tax');
+        //         $file = $request->file('tax');
               
-                // $img =  ImageManagerStatic::make($request->file('contract'));
-                // $contract = Str::random().'_contract_pic.pdf';
-                // Storage::disk('contract')->put($image,$img);
-                $tax = time() . '.' . $file->getClientOriginalExtension();
-                $destinationPath = public_path() . '/tax/';
-                $file->move($destinationPath, $tax);
+        //         // $img =  ImageManagerStatic::make($request->file('contract'));
+        //         // $contract = Str::random().'_contract_pic.pdf';
+        //         // Storage::disk('contract')->put($image,$img);
+        //         $tax = time() . '.' . $file->getClientOriginalExtension();
+        //         $destinationPath = public_path() . '/tax/';
+        //         $file->move($destinationPath, $tax);
                 
      
-        }  
+        // }  
+
+
+
+
+
+
+
+
+
         // 'cr_number',
         // 'tax',
         // 'commercial',
@@ -278,8 +287,8 @@ return $e->getMessage();
 
         $cr = new CrDetails();
 
-        $cr->cr_number = $request->cr_number;
-        $cr->tax = $tax;
+        $cr->cr_number ='null';
+        $cr->tax = 'null';
         $cr->commercial =  $commercial;
         $cr->muncipal = $muncipal;
         $cr->user_id = $request->user_id;
@@ -287,8 +296,8 @@ return $e->getMessage();
         $save = $cr->save();
         session()->flash('msg', 'Successfully done the Registration...');
 
-        return redirect()->to('/');
-        
+      //  return redirect()->to('/');
+        return redirect()->to('basic-info/'.$request->user_id);
 
       } catch(\Exception $e) {
         return $e;
