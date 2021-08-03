@@ -58,4 +58,5 @@ Route::get('/greeting/{locale}', function ($locale) {
  Route::get('/cr-details/{id}',[HomeController::class,'cr_details']);
  Route::post('/cr-details',[HomeController::class,'cr_store'])->name('main.store');
 
- Route::get('/setting',[HomeController::class,'privacy'])->name('setting.one');
+ Route::get('/terms-and-conditions',[HomeController::class,'terms'])->name('setting.one');
+ Route::get('/privacy-policy',[HomeController::class,'privacy'])->name('setting.two');

@@ -153,7 +153,8 @@
 						<div class="col-12">
  
 							<p> <label class="inline btn">
-			   <input type="checkbox" name="checkbox">   {{__('register.agree')}} <a href="{{ route('setting.one')}}"> {{__('register.terms')}}</a>
+			   <input type="checkbox" name="checkbox">   {{__('register.agree')}} <a target="_blank" href="{{ route('setting.one')}}"> {{__('register.terms')}}</a>
+			   , <a target="_blank"  href="{{ route('setting.two')}}"> {{__('register.privacy')}}</a>
 		   </label></p>
 
 		   @error('checkbox')

@@ -17,7 +17,7 @@ class HomeController extends Controller
 {
     //
 
-    public function privacy() {
+    public function terms() {
       $locale = App::currentLocale();
 
       App::setLocale($locale);
@@ -27,6 +27,17 @@ class HomeController extends Controller
     return view('front.setting',compact('setting'));
 
   }
+
+  public function privacy() {
+    $locale = App::currentLocale();
+
+    App::setLocale($locale);
+
+  //  return app()->getLocale();
+   $setting = Setting::translatedIn($locale)->where('id',2)->get();
+  return view('front.setting',compact('setting'));
+
+}
     public function index() {
            $locale = App::currentLocale();
 

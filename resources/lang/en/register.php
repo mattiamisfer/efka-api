@@ -47,6 +47,8 @@ return [
     'agree' => 'I Agree to the',
     'terms' => 'Terms and Conditions',
     'freelancer' =>  'Freelances Certificate Copy',
-    'saudi' => 'Saudi National ID Copy'
+    'saudi' => 'Saudi National ID Copy',
+    'privacy' => 'Privacy policy
+    '
 
 ];
