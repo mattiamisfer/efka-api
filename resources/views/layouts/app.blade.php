@@ -128,17 +128,17 @@
 						<a class="navbar-brand" href="{{  url('/') }}">
 							<img src="{{ asset('assets/img/efa/efalogo.png')}}" width="200" height="auto" alt="Logo">
 						</a>						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-						  <span class="">EN/AR</span>
+						  <span class="">English/عربى</span>
 						</button>
 						@php $locale = session()->get('locale'); @endphp
 						<div class=" collapse navbar-collapse" id="navbarNav">
 						  <ul class=" navbar-nav" style="padding-left: 100px; margin-top:-60px">
 							 
 							<li class="nav-item register">
-							  <a class="nav-link" href="{{ url('lang/en')}}">EN</a>
+							  <a class="nav-link" href="{{ url('lang/en')}}">English</a>
 							</li>
 							<li class="nav-item register">
-							  <a class="nav-link" href="{{ url('lang/ar')}}">AR</a>
+							  <a class="nav-link" href="{{ url('lang/ar')}}">عربى</a>
 							</li>
 						 
 						  </ul>

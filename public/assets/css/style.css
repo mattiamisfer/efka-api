@@ -67,7 +67,7 @@ body {
   font-size: var(--font-size);
   font-family: var(--font-family);
   color: var(--body-color);
-  background-image: url(../img/efa/bg.png);
+  /* background-image: url(../img/efa/bg.png); */
 }
 
 a {

@@ -140,20 +140,21 @@
 						{{-- {{$categories}} --}}
 							
 					
-						<div class="col-6">
+						<div class="col-6" >
 							<div class="form-group">
-								
-								<input type="checkbox" id="vehicle1" name="category[]" value="{{$categories->id}}">
-<label for="category[]" style="font-size: 14px;">  {{$categories->name}} </label><br>
+								<label   style="font-size: 14px;   {{(App::isLocale('ar') ? 'float:right' : '')}}"  
+								 for="vehicle_{{$categories->id}}"> 					
+							 		<input type="checkbox"   name="category[]"  value="{{$categories->id}}" id="vehicle_{{$categories->id}}">
+ {{$categories->name}}  </label><br>
  
-							</div>
+							 	</div>
 						</div>
 						@endforeach
 						@endforeach
 						<div class="col-12">
  
 							<p> <label class="inline btn">
-			   <input type="checkbox" name="checkbox">   {{__('register.agree')}} <a target="_blank" href="{{ route('setting.one')}}"> {{__('register.terms')}}</a>
+			   <input type="checkbox" name="checkbox" >   {{__('register.agree')}} <a target="_blank" href="{{ route('setting.one')}}"> {{__('register.terms')}}</a>
 			   , <a target="_blank"  href="{{ route('setting.two')}}"> {{__('register.privacy')}}</a>
 		   </label></p>
 
