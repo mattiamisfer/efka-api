@@ -42,6 +42,7 @@ return array(
     'App\\Models\\Home' => $baseDir . '/app/Models/Home.php',
     'App\\Models\\HomeTranslation' => $baseDir . '/app/Models/HomeTranslation.php',
     'App\\Models\\Language' => $baseDir . '/app/Models/Language.php',
+    'App\\Models\\LanguageTranslation' => $baseDir . '/app/Models/LanguageTranslation.php',
     'App\\Models\\Mainuser' => $baseDir . '/app/Models/Mainuser.php',
     'App\\Models\\Product' => $baseDir . '/app/Models/Product.php',
     'App\\Models\\Setting' => $baseDir . '/app/Models/Setting.php',

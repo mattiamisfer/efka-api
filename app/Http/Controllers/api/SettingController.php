@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Language;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -18,7 +19,36 @@ class SettingController extends Controller
     public function index()
     {
         //
+        try  {
+            $locale = App::currentLocale();
+ 
 
+            App::setLocale($locale);
+         
+             //   //  return app()->getLocale();
+             $results = [];
+              $settings = Language::translatedIn($locale)->get();
+         
+              foreach($settings as $k => $settting) {
+                  $results[]
+         =  [
+                          
+                      'id' => $settting->id,
+                      'content' => $settting->name,
+                      
+                    
+                  ]; 
+              }
+         
+              $data = [
+                  'status' => true,
+                  'data' => $results
+              ];
+            
+              return response()->json($data,200);
+        }   catch(Exception $e) {
+            return response()->json($e,500);
+          }
       
     }
 
@@ -128,6 +158,74 @@ class SettingController extends Controller
             return response()->json($e,500);
           }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public function main()
+    {
+        //
+
+        try  {
+            $locale = App::currentLocale();
+ 
+
+            App::setLocale($locale);
+         
+             //   //  return app()->getLocale();
+             $results = [];
+              $settings = Language::translatedIn($locale)->get();
+         
+              foreach($settings as $k => $settting) {
+                  $results[]
+         =  [
+                          
+                      'id' => $settting->id,
+                      'content' => $settting->name,
+                      
+                    
+                  ]; 
+              }
+         
+              $data = [
+                  'status' => true,
+                  'data' => $results
+              ];
+            
+              return response()->json($data,200);
+        }   catch(Exception $e) {
+            return response()->json($e,500);
+          }
+    }
+
+
+
+
+
+
+
+
+
 
     /**
      * Update the specified resource in storage.

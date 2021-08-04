@@ -35,6 +35,8 @@ Route::post('/login',[MainuserController::class,'login']);
   Route::apiResource('category', CategoryController::class)->middleware('Localization');
   Route::apiResource('sliders',SliderController::class);
   Route::apiResource('home',ApiHomeController::class)->middleware('Localization');
-  Route::apiResource('setting',SettingController::class)->middleware('Localization');
+  
 
+  Route::apiResource('setting',SettingController::class)->middleware('Localization');
+ // Route::get('setting/languages',SettingController::class,'main')->middleware('Localization'); 
 //oute::get('category',[CategoryController::class,'index'])->middleware('Localization');;

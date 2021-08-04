@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Language;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,7 +19,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
 
             SliderSeeder::class,
-            CategorySeeder::class
+            CategorySeeder::class,
+            LanguageSeeder::class,
+            LanguageTranlationSeeder::class
         ]);
     }
 }
