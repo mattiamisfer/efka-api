@@ -41,6 +41,8 @@
     </head>
 
     <body>
+		<div class="container-fluid ">
+			<div class="row">
 		<!-- Start Preloader Area -->
 	<!--	<div class="loader-wrapper">
 			<div class="loader">
@@ -53,7 +55,10 @@
 			</div>
 		</div> -->
 		<!-- End Preloader Area -->
- 
+		<div class="col-lg-6 col-md-6">
+			<div><img src="{{ asset('assets/img/efa/bg.jpg')}}"></div>
+			</div>
+			<div class="col-lg-6 col-md-6">
 		<!-- Start Navbar Area -->
 		<div class="navbar-area">
 			<!-- Menu For Mobile Device -->
@@ -180,10 +185,15 @@
 		<!-- End Footer Bottom Area -->
 		
 		<!-- Start Go Top Area -->
+		
+	</div>
+</div>
+</div>
 		<div class="go-top">
 			<i class='bx bx-chevrons-up'></i>
 			<i class='bx bx-chevrons-up'></i>
 		</div>
+
 		<!-- End Go Top Area -->
 		
 
