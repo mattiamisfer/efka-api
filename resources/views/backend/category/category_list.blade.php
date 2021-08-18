@@ -72,10 +72,10 @@
           @foreach ($categories as $category)
           <tr>
             <td class="v-align-middle">
-              <p>{{$category->name}} {{$category->id}}</p>
+              <p>{{$category->name}}</p>
             </td>
             <td class="v-align-middle">
-              <p><img class="" src="{{ public_path() }}/category_image/{{ $category->image }}" width="100"/></p>
+              <p><img class="" src="{{ asset('category_image/') }}/{{ $category->image }}" width="100" height="100"/></p>
             </td>
             <td class="v-align-middle">
                  <a href="{{route('category.edit', $category->id)}}"><i class="fa fa-edit"></i> </a>
@@ -106,6 +106,7 @@
            
               </tbody>
             </table>
+            {{ $categories->links() }}
           </div>
         </div>
         <!-- END card -->

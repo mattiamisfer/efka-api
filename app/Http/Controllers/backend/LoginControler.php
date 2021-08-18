@@ -40,7 +40,7 @@ class LoginControler extends Controller
         //
 
         if(($request->input('username') == 'admin@gmail.com') && ($request->input('password') == "password" )) {
-            return redirect()->to('dashboard');
+            return redirect()->to('user');
 
         } else {
             return back()->with('failed', 'Some error Occured');  

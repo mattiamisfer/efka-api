@@ -24,7 +24,7 @@ class CategoryController extends Controller
         App::setLocale($locale);
 
         // App::setLocale($locale);
-            $categories = Category::translatedIn($locale)->get();
+            $categories = Category::translatedIn($locale)->paginate(10);
          
 
        
@@ -127,6 +127,40 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        try {
+            $category = Category::find($id);
+   
+            if($request->hasFile('image')) {
+      
+             $file = $request->file('image');
+           
+             // $img =  ImageManagerStatic::make($request->file('contract'));
+             // $contract = Str::random().'_contract_pic.pdf';
+             // Storage::disk('contract')->put($image,$img);
+             $bank_path = time() . '.' . $file->getClientOriginalName();
+             $destinationPath = public_path() . '/category_image/';
+             $file->move($destinationPath, $bank_path);
+             
+      
+     }  else 
+     {
+         $bank_path = $request->current_img;
+     }
+             $category->image = $bank_path;
+            foreach (['en', 'ar'] as $locale) {
+             $category->translateOrNew($locale)->name = $request->{$locale}['name'];
+           //  $category->translateOrNew($locale)->category_id =  '100';
+         }
+     
+        
+            $category->save();
+     
+        return  back()->with('success', 'SucceessFully Updated...');  
+        } catch(\Exception $e) {
+            return back()->with('failed', 'Some error Occured'.$e->getMessage());  
+        }
+      
     }
 
     /**

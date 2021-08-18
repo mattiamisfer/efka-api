@@ -38,9 +38,9 @@
       <!-- START Login Background Pic Wrapper-->
       <div class="bg-pic">
         <!-- START Background Pic-->
-        <img src="{{ asset('backend/assets/img/demo/new-york-city-buildings-sunrise-morning-hd-wallpaper.jpg')}}"
-         data-src="{{ asset('backend/assets/img/demo/new-york-city-buildings-sunrise-morning-hd-wallpaper.jpg')}}"
-          data-src-retina="{{ asset('backend/assets/img/demo/new-york-city-buildings-sunrise-morning-hd-wallpaper.jpg')}}" alt="" class="lazy">
+        <img src="{{ asset('backend/assets/img/demo/bg.jpg')}}"
+         data-src="{{ asset('backend/assets/img/demo/bg.jpg')}}"
+          data-src-retina="{{ asset('backend/assets/img/demo/bg.jpg')}}" alt="" class="lazy">
         <!-- END Background Pic-->
         <!-- START Background Caption-->
         <div class="text-white bg-caption pull-bottom sm-pull-bottom p-l-20 m-b-20">

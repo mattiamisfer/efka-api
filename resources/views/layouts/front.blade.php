@@ -105,18 +105,7 @@
                 <a href="{{route('category.index')}}">Category</a>
                 <span class="icon-thumbnail">CT</span>
               </li>
-              <li class="">
-                <a href="secondary_layout.html">Secondary</a>
-                <span class="icon-thumbnail">sl</span>
-              </li>
-              <li class="">
-                <a href="boxed_layout.html">Boxed</a>
-                <span class="icon-thumbnail">bl</span>
-              </li>
-              <li class="">
-                <a href="rtl_layout.html">RTL</a>
-                <span class="icon-thumbnail">rl</span>
-              </li>
+          
             </ul>
           </li>
         
