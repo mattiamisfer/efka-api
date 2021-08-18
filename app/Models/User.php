@@ -66,4 +66,11 @@ class User extends Authenticatable
     public function category() {
         return $this->belongsToMany(Category::class);
     }
+    public function document() {
+        return $this->hasOne(CrDetails::class);
+    }
+
+    public function branch() {
+        return $this->hasMany(BranchInfo::class);
+    }
 }

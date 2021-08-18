@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\backend\CategoryController;
+use App\Http\Controllers\backend\DashboardController;
+use App\Http\Controllers\backend\LoginControler;
+use App\Http\Controllers\backend\MainUserController;
+use App\Http\Controllers\backend\ProductControler;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LocalizationController;
 use App\Models\Category;
@@ -60,3 +65,37 @@ Route::get('/greeting/{locale}', function ($locale) {
 
  Route::get('/terms-and-conditions',[HomeController::class,'terms'])->name('setting.one');
  Route::get('/privacy-policy',[HomeController::class,'privacy'])->name('setting.two');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ //admin routes
+
+ Route::resource('dashboard', DashboardController::class);
+ Route::resource('login', LoginControler::class);
+ Route::resource('product', ProductControler::class);
+ Route::resource('category', CategoryController::class);
+ Route::resource('user', MainUserController::class);

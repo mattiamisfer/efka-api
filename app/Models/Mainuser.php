@@ -58,9 +58,11 @@ class Mainuser extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
-
-
-    // public function category() {
-    //     return $this->belongsToMany(Category::class);
+    // public function members() {
+    //     return $this->hasMany(Category::class ,'id','category_id');
     // }
+
+    public function category() {
+        return $this->belongsToMany(Category::class);
+    }
 }

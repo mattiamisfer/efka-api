@@ -6,8 +6,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 use Astrotomic\Translatable\Translatable;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
+
 class Category extends Model implements TranslatableContract
 {
+ 
     use HasFactory;
 
   //  TranslatableContract
@@ -16,4 +20,5 @@ class Category extends Model implements TranslatableContract
     public $translatedAttributes  = ['name', 'category_id'];
 
     protected $guarded = ['id'];
+    protected $fillable = ['image'];
 }
