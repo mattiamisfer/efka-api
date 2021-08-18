@@ -71,14 +71,14 @@ class CategoryController extends Controller
              
       
      }  
-             $category->image = $file;
+             $category->image = $bank_path;
             foreach (['en', 'ar'] as $locale) {
              $category->translateOrNew($locale)->name = $request->{$locale}['name'];
            //  $category->translateOrNew($locale)->category_id =  '100';
          }
      
         
-         return  $category->save();
+            $category->save();
      
         return  back()->with('success', 'SucceessFully Added...');  
         } catch(\Exception $e) {

@@ -35,8 +35,8 @@
         <!-- START card -->
         <div class="card card-transparent">
           <div class="card-header ">
-            <div class="card-title">Table with Dynamic Rows
-            </div>
+            {{-- <div class="card-title">Table with Dynamic Rows
+            </div> --}}
             <div class="pull-right">
               <div class="col-xs-12">
            
@@ -75,7 +75,7 @@
               <p>{{$category->name}} {{$category->id}}</p>
             </td>
             <td class="v-align-middle">
-              <p><img class="" src="{{ $category->image }}" width="100"/></p>
+              <p><img class="" src="{{ public_path() }}/category_image/{{ $category->image }}" width="100"/></p>
             </td>
             <td class="v-align-middle">
                  <a href="{{route('category.edit', $category->id)}}"><i class="fa fa-edit"></i> </a>

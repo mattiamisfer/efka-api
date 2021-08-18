@@ -171,7 +171,7 @@
                           <a href="#" class="text-complete pull-left">
                             <i class="pg-map fs-16 m-r-10"></i>
                             <span class="bold">Carrot Design</span>
-                            <span class="fs-12 m-l-10">David Nester</span>
+                            <span class="fs-12 m-l-10">Admin</span>
                           </a>
                           <div class="pull-right">
                             <div class="inline thumbnail-wrapper d16 circular m-t-15 m-r-10 toggle-more-details">
@@ -282,7 +282,7 @@
         <div class="d-flex align-items-center">
           <!-- START User Info-->
           <div class="pull-left p-r-10 fs-14 font-heading d-lg-block d-none">
-            <span class="semi-bold">David</span> <span class="text-master">Nest</span>
+            <span class="semi-bold">Admin</span> <span class="text-master"></span>
           </div>
           <div class="dropdown pull-right d-lg-block d-none">
             <button class="profile-dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -294,7 +294,7 @@
               <a href="#" class="dropdown-item"><i class="pg-settings_small"></i> Settings</a>
               <a href="#" class="dropdown-item"><i class="pg-outdent"></i> Feedback</a>
               <a href="#" class="dropdown-item"><i class="pg-signals"></i> Help</a>
-              <a href="#" class="clearfix bg-master-lighter dropdown-item">
+              <a href="{{ route('login.index') }}" class="clearfix bg-master-lighter dropdown-item">
                 <span class="pull-left">Logout</span>
                 <span class="pull-right"><i class="pg-power"></i></span>
               </a>

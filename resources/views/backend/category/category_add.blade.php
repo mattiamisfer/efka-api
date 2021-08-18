@@ -42,6 +42,17 @@
             	@csrf
                  
           <div class="card card-borderless">
+            @if (Session::has('success'))
+     
+            <div class="alert alert-success" role="alert">
+              {{ Session::get('success') }}
+            </div>
+            @endif
+            @if (Session::has('failure'))
+            <div class="alert alert-danger" role="alert">
+              {{ Session::get('failure') }}
+            </div>
+         @endif
             <ul class="nav nav-tabs nav-tabs-simple" role="tablist" data-init-reponsive-tabs="dropdownfx">
               <li class="nav-item">
                 <a class="active" data-toggle="tab" role="tab" data-target="#tab2hellowWorld" href="#">English</a>
