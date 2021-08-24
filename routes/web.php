@@ -10,6 +10,7 @@ use App\Http\Controllers\LocalizationController;
 use App\Models\Category;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -89,13 +90,19 @@ Route::get('/greeting/{locale}', function ($locale) {
 
 
 
+ 
 
 
 
  //admin routes
+ Route::post('logout', [LoginControler::class, 'logout'])->name('logout');
 
  Route::resource('dashboard', DashboardController::class);
  Route::resource('login', LoginControler::class);
  Route::resource('product', ProductControler::class);
  Route::resource('category', CategoryController::class);
  Route::resource('user', MainUserController::class);
+
+ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function () {
+    Route::resource('dashboard', DashboardController::class);
+});

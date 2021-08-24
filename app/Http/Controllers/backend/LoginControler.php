@@ -4,7 +4,9 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+ 
 class LoginControler extends Controller
 {
     /**
@@ -12,6 +14,7 @@ class LoginControler extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+  
     public function index()
     {
         //
@@ -39,15 +42,42 @@ class LoginControler extends Controller
     {
         //
 
-        if(($request->input('username') == 'admin@gmail.com') && ($request->input('password') == "password" )) {
-            return redirect()->to('user');
+        // if(($request->input('username') == 'admin@gmail.com') && ($request->input('password') == "password" )) {
+        //     return redirect()->to('user');
 
-        } else {
-            return back()->with('failed', 'Some error Occured');  
+        // } else {
+        //     return back()->with('failed', 'Some error Occured');  
 
+        // }
+
+        $input = $request->all();
+   
+        $this->validate($request, [
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+      //  Auth::attempt(['email' => $email, 'password' => $password])
+   
+        if(  Auth::attempt(array('email' => $input['email'], 'password' => $input['password'])))
+        {
+            if (Auth::user()->role ='admin') {
+                return redirect()->to('user');
+            }else{
+                return redirect()->to('product');
+            }
+
+        //    return redirect()->to('user');
+        }else{
+            return redirect()->to('login')
+                ->with('failed','Email-Address And Password Are Wrong.');
         }
     }
 
+    public function logout(Request $request) {
+        Auth::logout();
+        return redirect('/login');
+    }
     /**
      * Display the specified resource.
      *

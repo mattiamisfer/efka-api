@@ -88,22 +88,32 @@
             <span class="bg-success icon-thumbnail"><i class="pg-home"></i></span>
           </li>
 
+          @if (Auth::user()->role =='admin')
+              
+       
+
           <li class="m-t-30 ">
             <a href="{{route('user.index' )}}" class="detailed">
               <span class="title">Users</span>
              </a>
             <span class="bg-success icon-thumbnail"><i class="fa fa-user"></i></span>
           </li>
-          
+          @endif
         
           <li>
             <a href="javascript:;"><span class="title">Catalog</span>
             <span class=" arrow"></span></a>
             <span class="icon-thumbnail"><i class="pg-layouts2"></i></span>
             <ul class="sub-menu">
+              @if (Auth::user()->role =='admin')
               <li class="">
-                <a href="{{route('category.index')}}">Category</a>
+                <a href="{{route('category.index')}}">Category </a>
                 <span class="icon-thumbnail">CT</span>
+              </li>
+              @endif
+              <li class="">
+                <a href="{{route('product.index')}}">Product</a>
+                <span class="icon-thumbnail">PT</span>
               </li>
           
             </ul>
@@ -283,10 +293,16 @@
               <a href="#" class="dropdown-item"><i class="pg-settings_small"></i> Settings</a>
               <a href="#" class="dropdown-item"><i class="pg-outdent"></i> Feedback</a>
               <a href="#" class="dropdown-item"><i class="pg-signals"></i> Help</a>
-              <a href="{{ route('login.index') }}" class="clearfix bg-master-lighter dropdown-item">
+              {{-- <a href="{{ route('login.index') }}" class="clearfix bg-master-lighter dropdown-item">
                 <span class="pull-left">Logout</span>
+    
+              </a> --}}
+
+              <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button  type="submit" class="clearfix bg-master-lighter dropdown-item">Logout</button>
                 <span class="pull-right"><i class="pg-power"></i></span>
-              </a>
+            </form>
             </div>
           </div>
           <!-- END User Info-->

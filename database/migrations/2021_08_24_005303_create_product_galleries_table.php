@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBranchInfosTable extends Migration
+class CreateProductGalleriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateBranchInfosTable extends Migration
      */
     public function up()
     {
-        Schema::create('branch_infos', function (Blueprint $table) {
+        Schema::create('product_galleries', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->string('branch');
+            $table->string('filepath')->nullable();
+            $table->string('sort_order')->nullable();
+            $table->bigInteger('product_id');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateBranchInfosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('branch_infos');
+        Schema::dropIfExists('product_galleries');
     }
 }

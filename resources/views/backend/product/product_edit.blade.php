@@ -10,8 +10,8 @@
         <div class="inner">
           <!-- START BREADCRUMB -->
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Products</a></li>
-            <li class="breadcrumb-item active">Add</li>
+            <li class="breadcrumb-item"><a href="#">UI Elements</a></li>
+            <li class="breadcrumb-item active">Tabs &amp; Accordians</li>
           </ol>
           <!-- END BREADCRUMB -->
           <div class="row">
@@ -61,8 +61,8 @@
               </li>
               {{-- <li class="nav-item">
                 <a href="#" data-toggle="tab" role="tab" data-target="#tab2FollowUs">Option</a>
-              </li> --}}
-             
+              </li>
+              --}}
               {{-- <li class="nav-item">
                 <a href="#" data-toggle="tab" role="tab" data-target="#tab2FollowUs">Discount</a>
               </li> --}}
@@ -92,27 +92,27 @@
                                 <div class="row column-seperation">
                                     <div class="form-group form-group-default required ">
                                         <label>{{  __('product.product_name')}}</label>
-                                        <input type="email" class="form-control" name="en[product_name]" required>
+                                        <input type="email" class="form-control" value="{{$attribute['en']['product_name']}}"  name="en[product_name]" required>
                                       </div>
     
     
                                       <div class="form-group form-group-default required ">
                                         <label>{{  __('product.description')}}</label>
-                                        <textarea class="form-control" name="en[product_description]" > </textarea>
+                                        <textarea class="form-control" name="en[product_description]"  >{{$attribute['en']['product_description']}} </textarea>
                                        </div>
     
     
                                        <div class="form-group form-group-default required ">
                                         <label>{{  __('product.meta_tag_title')}}</label>
-                                        <input type="email" class="form-control" name="en[product_meta_tag_title]" required>
+                                        <input type="email" class="form-control" name="en[product_meta_tag_title]" value="{{$attribute['en']['product_meta_tag_title']}}" required>
                                       </div>
                                       <div class="form-group form-group-default required ">
                                         <label>{{  __('product.meta_tag_descriptiion')}}</label>
-                                        <textarea class="form-control" name="en[product_meta_tag_description]" > </textarea>
+                                        <textarea class="form-control" name="en[product_meta_tag_description]" >{{$attribute['en']['product_meta_tag_description']}} </textarea>
                                        </div>
                                        <div class="form-group form-group-default required ">
                                         <label>{{  __('product.meta_tag_keyword')}}</label>
-                                        <input type="email" class="form-control" name="en[product_meta_tag_keyword]" required>
+                                        <input type="email" class="form-control" name="en[product_meta_tag_keyword]"  value="{{$attribute['en']['product_meta_tag_keyword']}}" required>
                                       </div>
                                 
                                   </div>
@@ -122,27 +122,27 @@
                               <div class="row column-seperation">
                                 <div class="form-group form-group-default required ">
                                     <label>{{  __('product.product_name')}}</label>
-                                    <input type="email" class="form-control" name="ar[product_name]" required>
+                                    <input type="email" class="form-control" name="ar[product_name]"  value="{{$attribute['ar']['product_name']}}" required>
                                   </div>
 
 
                                   <div class="form-group form-group-default required ">
                                     <label>{{  __('product.description')}}</label>
-                                    <textarea class="form-control" name="ar[product_description]" > </textarea>
+                                    <textarea class="form-control" name="ar[product_description]" >{{$attribute['ar']['product_description']}}  </textarea>
                                    </div>
 
 
                                    <div class="form-group form-group-default required ">
                                     <label>{{  __('product.meta_tag_title')}}</label>
-                                    <input type="email" class="form-control" name="ar[product_meta_tag_title]" required>
+                                    <input type="email" class="form-control" name="ar[product_meta_tag_title]" value="{{$attribute['ar']['product_meta_tag_title']}}" required>
                                   </div>
                                   <div class="form-group form-group-default required ">
                                     <label>{{  __('product.meta_tag_descriptiion')}}</label>
-                                    <textarea class="form-control" name="ar[product_meta_tag_description]" > </textarea>
+                                    <textarea class="form-control" name="ar[product_meta_tag_description]" >{{$attribute['ar']['product_meta_tag_description']}} </textarea>
                                    </div>
                                    <div class="form-group form-group-default required ">
                                     <label>{{  __('product.meta_tag_keyword')}}</label>
-                                    <input type="email" class="form-control" name="ar[product_meta_tag_keyword]" required>
+                                    <input type="email" class="form-control" name="ar[product_meta_tag_keyword]" value="{{$attribute['ar']['product_meta_tag_keyword']}} " required>
                                   </div>
                             
                               </div>
@@ -158,27 +158,27 @@
                 <div class="row column-seperation">
                     <div class="form-group form-group-default required ">
                         <label>Model</label>
-                        <input type="text" class="form-control" name="product_model" >
+                        <input type="text" class="form-control" name="product_model" value="{{$products->product_model}}" >
                       </div>
                       <div class="form-group form-group-default required ">
                         <label>SKU</label>
-                        <input type="text" class="form-control" name="product_sku" >
+                        <input type="text" class="form-control" name="product_sku" value="{{$products->product_sku}}" >
                       </div>
                       <div class="form-group form-group-default required ">
                         <label>ISPN</label>
-                        <input type="text" class="form-control" name="product_ispn" >
+                        <input type="text" class="form-control" name="product_ispn"  value="{{$products->product_ispn}}">
                       </div>
                       <div class="form-group form-group-default required ">
                         <label>Quantity</label>
-                        <input type="text" class="form-control" name="product_quantity" >
+                        <input type="text" class="form-control" name="product_quantity" value="{{$products->prodcut_qunatity}}" >
                       </div>
                       <div class="form-group form-group-default required ">
                         <label>Min Order </label>
-                        <input type="text" class="form-control" name="product_min_order" >
+                        <input type="text" class="form-control" name="product_min_order" value="{{$products->product_min_order}}">
                       </div>
                       <div class="form-group form-group-default required ">
                         <label>Price</label>
-                        <input type="text" class="form-control" name="prodcut_price" >
+                        <input type="text" class="form-control" name="prodcut_price"  value="{{$products->product_price}}">
                       </div>
 
 

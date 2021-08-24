@@ -9,9 +9,11 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
-
-class User extends Authenticatable
+  
+class User extends Authenticatable  
 {
+  //  use Authenticatable;
+
     use HasApiTokens;
     use HasFactory;
     use HasProfilePhoto;
@@ -30,6 +32,7 @@ class User extends Authenticatable
         'phone',
         'email',
         'password',
+        'role'
     ];
 
     /**
@@ -73,4 +76,12 @@ class User extends Authenticatable
     public function branch() {
         return $this->hasMany(BranchInfo::class);
     }
+
+    public function isAdmin() {
+        return $this->role === 'admin';
+     }
+ 
+     public function isVendor() {
+        return $this->role === 'vendor';
+     }
 }

@@ -83,6 +83,8 @@ class HomeController extends Controller
   $user->password =  bcrypt($request->password);
   $user->phone = $request->phone;
 
+  $user->role = 'vendor';
+
   $save = $user->save();
   $user->category()->sync($request->input('category', []));
   //return redirect()->route('/basic-info',['id'=>$user->id]); //pass your dynamic id

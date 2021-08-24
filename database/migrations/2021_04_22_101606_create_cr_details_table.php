@@ -15,7 +15,7 @@ class CreateCrDetailsTable extends Migration
     {
         Schema::create('cr_details', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->references('id')->on('users')->cascadeOnDelete();
+            $table->foreignId('user_id');
             $table->string('cr_number');
             $table->string('tax')->nullable();
             $table->string('muncipal')->nullable();
