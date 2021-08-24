@@ -94,6 +94,9 @@
                         {{$item->branch}}
                     </div> 
                     @endforeach
+
+
+                    <button>Approve User</button>
                    
                 
               </div>

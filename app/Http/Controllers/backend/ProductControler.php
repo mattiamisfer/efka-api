@@ -49,14 +49,14 @@ class ProductControler extends Controller
     public function create()
     {
         //
-
         $locale = App::currentLocale();
 
         App::setLocale($locale);
 
         // App::setLocale($locale);
             $categories = Category::translatedIn($locale);
-        return view('backend.product.product_add',compact('categories'));
+        //    return $categories;
+       return view('backend.product.product_add',compact('categories'));
     }
 
     /**
