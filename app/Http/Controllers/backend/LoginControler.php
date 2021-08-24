@@ -63,7 +63,9 @@ class LoginControler extends Controller
         {
             if (Auth::user()->role ='admin') {
                 return redirect()->to('user');
-            }else{
+            }
+            
+            if (Auth::user()->role ='vendor') {
                 return redirect()->to('product');
             }
 
