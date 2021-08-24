@@ -61,11 +61,11 @@ class LoginControler extends Controller
    
         if(  Auth::attempt(array('email' => $input['email'], 'password' => $input['password'])))
         {
-            if (Auth::user()->role ='admin') {
+            if (Auth::user()->role =='admin') {
                 return redirect()->to('user');
             }
             
-            if (Auth::user()->role ='vendor') {
+            if (Auth::user()->role =='vendor') {
                 return redirect()->to('product');
             }
 
