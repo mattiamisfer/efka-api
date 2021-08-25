@@ -120,29 +120,29 @@
                             </div>
                             <div class="tab-pane " id="tab2arabic">
                               <div class="row column-seperation">
-                                <div class="form-group form-group-default required ">
-                                    <label>{{  __('product.product_name')}}</label>
-                                    <input type="email" class="form-control" name="ar[product_name]" required>
+                                <div class="form-group form-group-default "  >
+                                    <label dir="rtl">اسم المنتج</label>
+                                    <input type="text" class="form-control" name="ar[product_name]" required>
                                   </div>
 
 
-                                  <div class="form-group form-group-default required ">
-                                    <label>{{  __('product.description')}}</label>
+                                  <div class="form-group form-group-default ">
+                                    <label dir="rtl"> الوصف</label>
                                     <textarea class="form-control" name="ar[product_description]" > </textarea>
                                    </div>
 
 
-                                   <div class="form-group form-group-default required ">
-                                    <label>{{  __('product.meta_tag_title')}}</label>
-                                    <input type="email" class="form-control" name="ar[product_meta_tag_title]" required>
+                                   <div class="form-group form-group-default ">
+                                    <label dir="rtl">  عنوان صفحة الويب</label>
+                                    <input type="text" class="form-control" name="ar[product_meta_tag_title]" required>
                                   </div>
-                                  <div class="form-group form-group-default required ">
-                                    <label>{{  __('product.meta_tag_descriptiion')}}</label>
+                                  <div class="form-group form-group-default ">
+                                    <label dir="rtl"> شرح صفحة الويب</label>
                                     <textarea class="form-control" name="ar[product_meta_tag_description]" > </textarea>
                                    </div>
-                                   <div class="form-group form-group-default required ">
-                                    <label>{{  __('product.meta_tag_keyword')}}</label>
-                                    <input type="email" class="form-control" name="ar[product_meta_tag_keyword]" required>
+                                   <div class="form-group form-group-default ">
+                                    <label dir="rtl">الكلمات المفتاحية</label>
+                                    <input type="text" class="form-control" name="ar[product_meta_tag_keyword]" required>
                                   </div>
                             
                               </div>
@@ -311,11 +311,11 @@
                      
                  
                   <div class="image-upload">
-                    <label for="file-input">
-                      <img id="previewImg" src="https://icon-library.net/images/upload-photo-icon/upload-photo-icon-21.jpg" style="width: 100px; height: 100px;" />
+                    <label >
+                      <img id="previewImg0" src="https://icon-library.net/images/upload-photo-icon/upload-photo-icon-21.jpg" style="width: 100px; height: 100px;" />
                     </label>
               
-                    <input id="file-input" type="file" name="main_image"   style="display: none;" />
+                    <input   type="file" name="main_image" class="fileupload"   id="0" />
                   </div>
 
            
@@ -323,28 +323,50 @@
 
                 </div>
 
-
+ 
                 <div class="row field_wrapper" >
                 
                     <div class="col-lg-4">
-                      <div class="image-upload">
-                        <label for="file-input">
-                          <img id="previewImg" src="https://icon-library.net/images/upload-photo-icon/upload-photo-icon-21.jpg" style="width: 100px; height: 100px;" />
+                      {{-- <div class="image-upload">
+                        <label >
+                          <img class="previewImg" src="https://icon-library.net/images/upload-photo-icon/upload-photo-icon-21.jpg" style="width: 100px; height: 100px;" />
                         </label>
-                  
-                        <input id="file-input" type="file" class="fileupload" data-id="1"  name="main_image_gallery[]"  style="display: none;" />
-                      </div>
+                   
+                        <input   type="file" class="fileupload"  data-id="res"  name="main_image_gallery[]"    />
+                      </div> --}}
     
                     </div>
                     <div class="col-lg-4">
-                      <input type="text" class="form-control" placeholder="Sort Order">
+                      {{-- <input type="text" class="form-control" placeholder="Sort Order"> --}}
                     </div>
                     <div class="col-lg-4">
-                      <a href="javascript:void(0);" class="add_button" title="Add field"><img src="{{ asset('backend/icons/add-icon.png')}}"></a>
+                      {{-- <a href="javascript:void(0);" class="add_button" title="Add field"><img src="{{ asset('backend/icons/add-icon.png')}}"></a> --}}
                     </div>
                   
 
               </div>
+
+              <div class="row " >
+                
+                <div class="col-lg-4">
+                  {{-- <div class="image-upload">
+                    <label >
+                      <img class="previewImg" src="https://icon-library.net/images/upload-photo-icon/upload-photo-icon-21.jpg" style="width: 100px; height: 100px;" />
+                    </label>
+               
+                    <input   type="file" class="fileupload"  data-id="res"  name="main_image_gallery[]"    />
+                  </div> --}}
+
+                </div>
+                <div class="col-lg-4">
+                  {{-- <input type="text" class="form-control" placeholder="Sort Order"> --}}
+                </div>
+                <div class="col-lg-4">
+                  <a href="javascript:void(0);" class="add_button" title="Add field"><img src="{{ asset('backend/icons/add-icon.png')}}"></a>
+                </div>
+              
+
+          </div>
             </div>
 
 
@@ -466,25 +488,28 @@
 //       }
 //   }
 
-$(document).ready(function(){
-        $('.fileupload').imageReader({
-          
-          renderType: 'canvas',
-          
-          onload: function(canvas) {
-            var ID = $(this).attr("data-id");
- alert(ID);
-            var ctx = canvas.getContext('2d');
-            ctx.fillStyle = "orange";
-            ctx.font = "12px Verdana";
-            ctx.fillText("Filename : "+ this.name, 10, 20, canvas.width - 10);
-            $(canvas).css({
-              width: '100%',
-              marginBottom: '-10px'
-            });
+ 
+// ..................................................................................................................................................ś.............................................ś..........
+
+    $(document).ready(()=>{
+      $(document).on('change', '.fileupload', function() {
+
+     // $('.fileupload').change(function(){
+
+        const ID = $(this).attr("id");
+    alert(ID);
+        const file = this.files[0];
+        console.log(file);
+        if (file){
+          let reader = new FileReader();
+          reader.onload = function(event){
+            console.log(event.target.result);
+            $('#previewImg'+ID).attr('src', event.target.result);
           }
-        });
+          reader.readAsDataURL(file);
+        }
       });
+    });
 </script>
 
 <script type="text/javascript">
@@ -502,11 +527,11 @@ $(document).ready(function(){
             var fieldHTML =  
           '                    <div class="col-lg-4">\n' +
           '                      <div class="image-upload">\n' +
-          '                        <label for="file-input">\n' +
-          '                          <img class="display_'  +x  + '" src="https://icon-library.net/images/upload-photo-icon/upload-photo-icon-21.jpg" style="width: 100px; height: 100px;" />\n' +
+          '                        <label  >\n' +
+          '                          <img id="previewImg'  +x  + '" src="https://icon-library.net/images/upload-photo-icon/upload-photo-icon-21.jpg" style="width: 100px; height: 100px;" />\n' +
           '                        </label>\n' +
           '                  \n' +
-          '                        <input id="file-input" type="file" class="file" name="main_image_gallery[]" data-id = "'+x+'"  style="display: none;" />\n' +
+          '                        <input   type="file" class="fileupload" name="main_image_gallery[]"  id = "'+x+'"   />\n' +
           '                      </div>\n' +
           '    \n' +
           '                    </div>\n' +
@@ -514,7 +539,7 @@ $(document).ready(function(){
           '                      <input type="text" class="form-control" placeholder="Sort Order">\n' +
           '                    </div>\n' +
           '                    <div class="col-lg-4">\n' +
-          '                      <a href="javascript:void(0);" class="add_button" title="Add field"><img src="{{ asset('backend/icons/add-icon.png')}}"></a>\n' +
+          '                      <a href="javascript:void(0);" class="remove_button" title="Add field"><img src="{{ asset('backend/icons/remove-icon.png')}}"></a>\n' +
           '                    </div>\n' ; //New input field html
            
               x++; //Increment field counter
