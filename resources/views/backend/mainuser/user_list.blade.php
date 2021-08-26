@@ -100,10 +100,10 @@
                 </div>
               </div>
               <div class="row">
-                <h4>Branch Details
+                <h4>Branch Locations
                     @foreach ($users->branch as $item)
                     <div class="col-lg-12">
-                        {{$item->branch}}
+                      <h6>  {{$item->branch}}</h6>
                     </div> 
                     @endforeach
 
