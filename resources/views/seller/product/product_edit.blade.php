@@ -473,7 +473,7 @@ $(document).ready(function(){
           
           onload: function(canvas) {
             var ID = $(this).attr("data-id");
- alert(ID);
+ //alert(ID);
             var ctx = canvas.getContext('2d');
             ctx.fillStyle = "orange";
             ctx.font = "12px Verdana";
