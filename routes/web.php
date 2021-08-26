@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\backend\ApproveController;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\LoginControler;
@@ -7,6 +8,7 @@ use App\Http\Controllers\backend\MainUserController;
 use App\Http\Controllers\backend\ProductControler;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LocalizationController;
+use App\Http\Controllers\seller\VendorProductController;
 use App\Models\Category;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\App;
@@ -67,8 +69,27 @@ Route::get('/greeting/{locale}', function ($locale) {
  Route::get('/terms-and-conditions',[HomeController::class,'terms'])->name('setting.one');
  Route::get('/privacy-policy',[HomeController::class,'privacy'])->name('setting.two');
 
+ Route::middleware(['middleware'=>'PreventBackHistory'])->group(function () {
+    Auth::routes();
+});
 
 
+
+ Route::group(['prefix'=>'admin', 'middleware'=>['isAdmin','auth','PreventBackHistory']], function(){
+    Route::resource('dashboard', DashboardController::class, ['as' => 'dashboard']);
+    // Route::resource('login', LoginControler::class);
+    Route::resource('product', ProductControler::class);
+    Route::resource('category', CategoryController::class);
+    Route::resource('user', MainUserController::class,['as' => 'user']);
+
+    Route::post('/status-update/{id}',[ApproveController::class,'approve'])->name('status.update');
+   
+});
+
+Route::group(['prefix'=>'vendor', 'middleware'=>['isVendor','auth','PreventBackHistory']], function(){
+   // Route::resource('category', CategoryController::class,['as' => 'category']);
+   Route::resource('product', VendorProductController::class,['as' => 'product']);
+});
 
 
 
@@ -94,15 +115,25 @@ Route::get('/greeting/{locale}', function ($locale) {
 
 
 
- //admin routes
- Route::post('logout', [LoginControler::class, 'logout'])->name('logout');
+ 
+//  Auth::routes();
+ 
 
- Route::resource('dashboard', DashboardController::class);
- Route::resource('login', LoginControler::class);
- Route::resource('product', ProductControler::class);
- Route::resource('category', CategoryController::class);
- Route::resource('user', MainUserController::class);
+//  //admin routes
+//  Route::post('logout', [LoginControler::class, 'logout'])->name('logout');
+//  Route::get('/login',[LoginControler::class,'index']);
+//  Route::post('/dologin',[LoginControler::class,'login']);
+//  Route::resource('dashboard', DashboardController::class);
+//  //Route::resource('login', LoginControler::class);
+//  Route::resource('product', ProductControler::class);
+//  Route::resource('category', CategoryController::class);
+//  Route::resource('user', MainUserController::class);
 
- Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function () {
-    Route::resource('dashboard', DashboardController::class);
-});
+//  Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function () {
+//     Route::resource('dashboard', DashboardController::class);
+// });
+
+
+//Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

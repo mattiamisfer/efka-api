@@ -81,7 +81,7 @@
         <!-- BEGIN SIDEBAR MENU ITEMS-->
         <ul class="menu-items">
           <li class="m-t-30 ">
-            <a href="{{route('dashboard.index' )}}" class="detailed">
+            <a href="{{route('dashboard.dashboard.index' )}}" class="detailed">
               <span class="title">Dashboard</span>
               <span class="details">12 New Updates</span>
             </a>
@@ -93,7 +93,7 @@
        
 
           <li class="m-t-30 ">
-            <a href="{{route('user.index' )}}" class="detailed">
+            <a href="{{route('user.user.index' )}}" class="detailed">
               <span class="title">Users</span>
              </a>
             <span class="bg-success icon-thumbnail"><i class="fa fa-user"></i></span>
@@ -110,12 +110,40 @@
                 <a href="{{route('category.index')}}">Category </a>
                 <span class="icon-thumbnail">CT</span>
               </li>
-              @endif
+           
               <li class="">
                 <a href="{{route('product.index')}}">Product</a>
                 <span class="icon-thumbnail">PT</span>
               </li>
-          
+              @endif
+
+              @if (Auth::user()->role =='vendor')
+              <li class="">
+                <a href="{{route('product.product.index')}}">Product</a>
+                <span class="icon-thumbnail">PT</span>
+              </li>
+              @endif
+            </ul>
+          </li>
+
+
+          <li>
+            <a href="javascript:;"><span class="title">Language</span>
+            <span class=" arrow"></span></a>
+            <span class="icon-thumbnail"><i class="pg-layouts2"></i></span>
+            <ul class="sub-menu">
+               <li class="">
+                <a href="{{ url('lang/ar')}}">ARABIC </a>
+                <span class="icon-thumbnail">AR</span>
+              </li>
+           
+              <li class="">
+                <a href="{{ url('lang/en')}}">ENGLISH</a>
+                <span class="icon-thumbnail">EN</span>
+              </li>
+              
+
+         
             </ul>
           </li>
         
@@ -281,7 +309,17 @@
         <div class="d-flex align-items-center">
           <!-- START User Info-->
           <div class="pull-left p-r-10 fs-14 font-heading d-lg-block d-none">
-            <span class="semi-bold">Admin</span> <span class="text-master"></span>
+
+            @if(Auth::user()->role =='admin')
+            <span class="semi-bold">Admin ({{ Auth::user()->first_name}})</span> <span class="text-master"></span>
+       
+
+           
+
+            @elseif(Auth::user()->role =='vendor')
+            <span class="semi-bold">Vendor ({{ Auth::user()->first_name}})</span> <span class="text-master"></span>
+            @endif
+       
           </div>
           <div class="dropdown pull-right d-lg-block d-none">
             <button class="profile-dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

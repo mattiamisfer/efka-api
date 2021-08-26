@@ -92,7 +92,7 @@
                                 <div class="row column-seperation">
                                     <div class="form-group form-group-default required ">
                                         <label>{{  __('product.product_name')}}</label>
-                                        <input type="email" class="form-control" name="en[product_name]" required>
+                                        <input type="text" class="form-control" name="en[product_name]" required>
                                       </div>
     
     
@@ -104,7 +104,7 @@
     
                                        <div class="form-group form-group-default required ">
                                         <label>{{  __('product.meta_tag_title')}}</label>
-                                        <input type="email" class="form-control" name="en[product_meta_tag_title]" required>
+                                        <input type="text" class="form-control" name="en[product_meta_tag_title]" required>
                                       </div>
                                       <div class="form-group form-group-default required ">
                                         <label>{{  __('product.meta_tag_descriptiion')}}</label>
@@ -112,7 +112,7 @@
                                        </div>
                                        <div class="form-group form-group-default required ">
                                         <label>{{  __('product.meta_tag_keyword')}}</label>
-                                        <input type="email" class="form-control" name="en[product_meta_tag_keyword]" required>
+                                        <input type="text" class="form-control" name="en[product_meta_tag_keyword]" required>
                                       </div>
                                 
                                   </div>
@@ -157,27 +157,27 @@
               <div class="tab-pane " id="tab2FollowUs">
                 <div class="row column-seperation">
                     <div class="form-group form-group-default required ">
-                        <label>Model</label>
+                        <label>{{  __('product.product_model')}}</label>
                         <input type="text" class="form-control" name="product_model" >
                       </div>
                       <div class="form-group form-group-default required ">
-                        <label>SKU</label>
+                        <label>{{  __('product.sku')}}</label>
                         <input type="text" class="form-control" name="product_sku" >
                       </div>
                       <div class="form-group form-group-default required ">
-                        <label>ISPN</label>
+                        <label>{{  __('product.ispn')}}</label>
                         <input type="text" class="form-control" name="product_ispn" >
                       </div>
                       <div class="form-group form-group-default required ">
-                        <label>Quantity</label>
+                        <label>{{  __('product.quantity')}}</label>
                         <input type="text" class="form-control" name="product_quantity" >
                       </div>
                       <div class="form-group form-group-default required ">
-                        <label>Min Order </label>
+                        <label>{{  __('product.min_order')}} </label>
                         <input type="text" class="form-control" name="product_min_order" >
                       </div>
                       <div class="form-group form-group-default required ">
-                        <label>Price</label>
+                        <label>{{  __('product.price')}}</label>
                         <input type="text" class="form-control" name="prodcut_price" >
                       </div>
 
@@ -185,13 +185,13 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group form-group-default required ">
-                            <label>Weight</label>
+                            <label>{{  __('product.weight')}}</label>
                             <input type="text" class="form-control" name="product_weight_value" required>
                           </div>
                         </div>
                         <div class="col-md-6">
                           <select class="form-control" data-init-plugin="select2" name="product_weight_type">
-                            <option value="">Kilogram</option>
+                            <option value="">{{  __('product.kilogram')}}</option>
                               <option value="CA">gram</option>
                               <option value="NV">Pound</option>
                               <option value="NV">Once</option>
@@ -208,7 +208,7 @@
                        <div class="col-lg-4">
                        
                           <select class="form-control" data-init-plugin="select2" name="product_status">
-                            <option value="">Out of stock Status</option>
+                            <option value="">{{  __('product.out_of_stock')}}</option>
                               <option value="CA">In Stock</option>
                               <option value="NV">Out Of Stock</option>
                            
@@ -229,7 +229,7 @@
                     </div>
 
                     <div class="col-lg-4">
-                         <label>Status</label>
+                         <label>{{  __('product.status')}}</label>
                         <select class="form-control" data-init-plugin="select2" name="status">
                           <option value="">Enable</option>
                             <option value="CA">Disable</option>
@@ -258,7 +258,7 @@
                     
                     <select class="form-control" data-init-plugin="select2" name="category_id" style="width: 250px">
                       
-                      <option value="">Select Category</option>
+                      <option value="">{{  __('product.select_category')}}</option>
 
                       @foreach ($categories as $category )
                       <option value="{{$category->id }}">{{$category->name }}</option>
@@ -270,21 +270,7 @@
                     </select>
                    </div>
                   
-                   <div class="form-group">
-                    
-                    <select class="form-control" data-init-plugin="select2"  name="manufacture" style="width: 250px">
-                      
-                      <option value="">Select Manufacture</option>
-
-                      @foreach ($categories as $category )
-                      <option value="CA">{{$category->name; }}</option>
-                      @endforeach
-                       
-                       
-                     
-                    
-                    </select>
-                   </div>
+                  
 
 
            
@@ -536,7 +522,7 @@
           '    \n' +
           '                    </div>\n' +
           '                    <div class="col-lg-4">\n' +
-          '                      <input type="text" class="form-control" placeholder="Sort Order">\n' +
+          '                      <input type="text" class="form-control" name="sort_order[]" placeholder="Sort Order">\n' +
           '                    </div>\n' +
           '                    <div class="col-lg-4">\n' +
           '                      <a href="javascript:void(0);" class="remove_button" title="Add field"><img src="{{ asset('backend/icons/remove-icon.png')}}"></a>\n' +

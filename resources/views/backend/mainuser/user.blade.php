@@ -63,6 +63,7 @@
                 <tr>
                   <th>Name</th>
                   <th>Email</th>
+                  <th>Status</th>
                   <th>Edit</th>
                   <th>Delete</th>
                 </tr>
@@ -77,14 +78,25 @@
             <td class="v-align-middle">
                 <p>{{$user->email}} </p>
             </td>
+
             <td class="v-align-middle">
-                 <a href="{{route('user.show', $user->id)}}"><i class="fa fa-edit"></i> </a>
+
+              @if($user->status ==1)
+              <span class="badge badge-primary">Approved</span>
+              @elseif($user->status ==0)
+              <span class="badge badge-danger">Pending</span>
+
+              @endif
+             
+          </td>
+            <td class="v-align-middle">
+                 <a href="{{route('user.user.show', $user->id)}}"><i class="fa fa-edit"></i> </a>
 
 
          
               </td>
               <td class="v-align-middle">
-              <form method="post" action="{{ route('user.destroy', $user->id) }}">
+              <form method="post" action="{{ route('user.user.destroy', $user->id) }}">
                 @csrf
                 <input type="hidden" name="_method" value="DELETE">
               <button type="submit" class="btn">

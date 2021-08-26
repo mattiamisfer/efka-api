@@ -38,7 +38,7 @@ class LoginControler extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function login(Request $request)
     {
         //
 
@@ -61,24 +61,27 @@ class LoginControler extends Controller
    
         if(  Auth::attempt(array('email' => $input['email'], 'password' => $input['password'])))
         {
-            if (Auth::user()->role =='admin') {
-                return redirect()->to('user');
+            if (Auth::user()->role ='admin') {
+                return redirect()->route('user');
+               // return redirect()->intended('student.home');
+
             }
             
-            if (Auth::user()->role =='vendor') {
-                return redirect()->to('product');
+            if (Auth::user()->role ='vendor') {
+                return redirect()->route('/product');
             }
 
         //    return redirect()->to('user');
         }else{
-            return redirect()->to('login')
+            return redirect()->route('/login')
                 ->with('failed','Email-Address And Password Are Wrong.');
         }
     }
 
     public function logout(Request $request) {
-        Auth::logout();
-        return redirect('login');
+    //  return  Auth::logout();
+    return redirect('login')->with(Auth::logout());
+
     }
     /**
      * Display the specified resource.

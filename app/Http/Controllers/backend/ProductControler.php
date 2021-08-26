@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\ProductGallery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
@@ -48,14 +49,13 @@ class ProductControler extends Controller
      */
     public function create()
     {
-        //
         $locale = App::currentLocale();
 
         App::setLocale($locale);
 
         // App::setLocale($locale);
-            $categories = Category::translatedIn($locale);
-        //    return $categories;
+            $categories = Category::translatedIn($locale)->paginate(10);
+       //    return $categories;
        return view('backend.product.product_add',compact('categories'));
     }
 
@@ -86,14 +86,17 @@ class ProductControler extends Controller
         $product->product_weight_type = $request->product_weight_type; 
         $product->product_status = $request->product_status; 
         $product->product_date = $request->date_available; 
-   
+        $product->home_id = 1;
         $product->category_id = $request->category_id; 
+        $product->user_id = Auth::user()->id;
 
         // foreach($_POST as $key=>$value)
         // {
         //   echo  "'$key'";
         //   echo ",";
         // }
+
+        //return $request->all();
 
 
         if($request->hasFile('main_image')) {
@@ -103,13 +106,13 @@ class ProductControler extends Controller
             // $img =  ImageManagerStatic::make($request->file('contract'));
             // $contract = Str::random().'_contract_pic.pdf';
             // Storage::disk('contract')->put($image,$img);
-            $bank_path = time() . '.' . $file->getClientOriginalName();
+            $bank_path = time() . '.' . $file->getClientOriginalExtension();
             $destinationPath = public_path() . '/main_product/';
             $file->move($destinationPath, $bank_path);
             
      
     }  
-    $product->image =$destinationPath;
+    $product->image =  $bank_path;
 
    // return $destinationPath;
         foreach (['en', 'ar'] as $locale) {
@@ -118,14 +121,40 @@ class ProductControler extends Controller
             $product->translateOrNew($locale)->product_meta_tag_title = $request->{$locale}['product_meta_tag_title'];
             $product->translateOrNew($locale)->product_meta_tag_description = $request->{$locale}['product_meta_tag_description'];
             $product->translateOrNew($locale)->product_meta_tag_keyword = $request->{$locale}['product_meta_tag_keyword'];
-          //  $category->translateOrNew($locale)->category_id =  '100';
-        }
+         }
+         $product->save();
+        //  $allowedfileExtension=['pdf','jpg','png','docx'];
+        //  $files = $request->file('main_image_gallery');
+
+        if ($request->hasfile('main_image_gallery')) {
+            $images = $request->file('main_image_gallery');
+
+            foreach($images as $key => $image) {
+                $name = $image->getClientOriginalName();
+                 $path = $image->storeAs('uploads', $name, 'public');
+$sort_order = $request->sort_order;
+                // ProductGallery::create([
+                //     'sort_order' =>1,
+                //     'product_id' => 1,
+                //     'filepath' => 'saraaa'
+                //   ]);
+
+                $product_gallery = new ProductGallery();
+                $product_gallery->sort_order =   $sort_order[$key];
+                $product_gallery->product_id = $product->id;
+                $product_gallery->filepath ='/storage/'.$path;
+                $product_gallery->save();
+
+            }
+         }
+       
+          
 
 
-        $product->save();
-        return  back()->with('success', 'SucceessFully Added...');  
+    //  return $product->id;    
+    return  back()->with('success', 'SucceessFully Added...');  
     } catch(\Exception $e) {
-        return back()->with('failed', 'Some error Occured'.$e->getMessage());  
+      return back()->with('failed', 'Some error Occured'.$e->getMessage());  
     }
     
     }
@@ -184,5 +213,17 @@ class ProductControler extends Controller
     public function destroy($id)
     {
         //
+
+        try {
+            $categories = Product::findOrFail($id);
+            $categories->deleteTranslations(['ar', 'en']);
+            $categories->delete();
+            
+              
+     
+            return  back()->with('success', 'SucceessFully Deleted...');  
+            } catch(\Exception $e) {
+                return back()->with('failed', 'Some error Occured');  
+            }
     }
 }

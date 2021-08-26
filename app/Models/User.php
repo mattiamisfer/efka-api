@@ -32,7 +32,8 @@ class User extends Authenticatable
         'phone',
         'email',
         'password',
-        'role'
+        'role',
+        'status'
     ];
 
     /**
@@ -77,11 +78,5 @@ class User extends Authenticatable
         return $this->hasMany(BranchInfo::class);
     }
 
-    public function isAdmin() {
-        return $this->role === 'admin';
-     }
- 
-     public function isVendor() {
-        return $this->role === 'vendor';
-     }
+    
 }

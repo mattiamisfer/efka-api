@@ -82,6 +82,7 @@ class HomeController extends Controller
   $user->email =   $request->email;
   $user->password =  bcrypt($request->password);
   $user->phone = $request->phone;
+ // $user->status =0;
 
   $user->role = 'vendor';
 

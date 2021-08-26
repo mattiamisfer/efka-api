@@ -7,6 +7,7 @@ use App\Models\Mainuser;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 
 class MainUserController extends Controller
 {
@@ -24,7 +25,7 @@ class MainUserController extends Controller
         App::setLocale($locale);
 
         // App::setLocale($locale);
-             $users = User::all();
+             $users = User:: where('role','vendor')->paginate(10);
 
         return view('backend.mainuser.user',compact('users'));
     }
@@ -61,6 +62,8 @@ class MainUserController extends Controller
         //
 
           $users = User::with(['category','document','branch'])->find($id);
+
+         // return $users;
         return view('backend.mainuser.user_list',compact('users'));
     }
 

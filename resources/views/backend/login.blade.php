@@ -61,7 +61,7 @@
          
        @endif
           <!-- START Login Form -->
-          <form id="form-login" class="p-t-15" role="form" action="{{route('login.store')}}" method="POST">
+          <form id="form-login" class="p-t-15" role="form" action="{{url('dologin')}}" method="POST">
             <!-- START Form Control-->
             @csrf
             <div class="form-group form-group-default">

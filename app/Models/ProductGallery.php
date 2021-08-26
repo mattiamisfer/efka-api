@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ProductGallery extends Model
 {
     use HasFactory;
+    protected $table = 'product_galleries';
+
+    protected $fillable = ['filepath'.'product_id','sort_order'];
 }

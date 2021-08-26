@@ -33,7 +33,19 @@
     <!-- START CONTAINER FLUID -->
     <div class=" container-fluid container-fixed-lg">
      <div class="row">
+  
         <div class="card card-default">
+          @if (Session::has('success'))
+     
+          <div class="alert alert-success" role="alert">
+            {{ Session::get('success') }}
+          </div>
+          @endif
+          @if (Session::has('failure'))
+          <div class="alert alert-danger" role="alert">
+            {{ Session::get('failure') }}
+          </div>
+       @endif
             <div class="card-header ">
                
             </div>
@@ -96,10 +108,24 @@
                     @endforeach
 
 
-                    <button>Approve User</button>
+                   
                    
                 
               </div>
+
+              <form   method="POST" action="{{ route('status.update',$users->id)}}"> <div class="row">
+                @csrf
+               
+                <div class="col-lg-8">
+                  <textarea name="" id="" class="form-control" cols="30" rows="10" placeholder="Enter Message"></textarea>
+                  
+                </div>
+
+                <div class="col-lg-4">
+                  <button type="submit" class="btn btn-success">Approve User</button>
+                </div>
+            
+              </div>  </form>
             </div>
           </div>
      </div>
