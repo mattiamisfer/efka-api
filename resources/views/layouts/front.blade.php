@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{       $locale = App::currentLocale(); }}" dir="{{(App::isLocale('ar') ? 'rtl' : 'ltr')}}">
+
   <head>
-    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
     <link rel="apple-touch-icon" href="pages/ico/60.png">
@@ -34,6 +35,16 @@
     <link class="main-stylesheet" href="{{ asset('backend/pages/css/pages.css')}}" rel="stylesheet" type="text/css" />
 
     <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
+
+    @if(App::isLocale('ar') )
+
+    <style type="stylesheet">
+ .label  {
+        direction: rtl !important;
+      }
+    </style>
+      
+    @endif
 
   </head>
   <body class="fixed-header dashboard">
