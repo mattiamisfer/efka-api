@@ -3613,6 +3613,8 @@ User Area CSS
   padding: 50px;
   -webkit-box-shadow: var(--box-shadow);
           box-shadow: var(--box-shadow);
+
+          text-align: right;
 }
 
 .user-area-style .contact-form-action .section-title {
