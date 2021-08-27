@@ -142,7 +142,7 @@
             <span class="icon-thumbnail"><i class="pg-layouts2"></i></span>
             <ul class="sub-menu">
                <li class="">
-                <a href="{{ url('lang/ar')}}">ARABIC </a>
+                <a href="{{ url('lang/ar')}}">عربي </a>
                 <span class="icon-thumbnail">AR</span>
               </li>
            
