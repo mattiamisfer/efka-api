@@ -31,7 +31,7 @@
 
 		@if(App::isLocale('ar') )
 		<link rel="stylesheet" href="{{ asset('assets/css/style-arabic.css')}}">
-		@elseif(App::isLcale('en'))
+		@elseif(App::isLocale('en'))
 		<link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
 		@endif
 
