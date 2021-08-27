@@ -128,7 +128,7 @@
 						</div>
 						<div class="col-12">
 							<div class="form-group">
-								<label>{{__('register.category_name')}}</label><br>
+								<label><b style="color: green">{{__('register.category_name')}}</b></label><br>
 								
 							</div>
 						</div>
