@@ -143,12 +143,12 @@
             <ul class="sub-menu">
                <li class="">
                 <a href="{{ url('lang/ar')}}">عربي </a>
-                <span class="icon-thumbnail">AR</span>
+                {{-- <span class="icon-thumbnail">AR</span> --}}
               </li>
            
               <li class="">
                 <a href="{{ url('lang/en')}}">ENGLISH</a>
-                <span class="icon-thumbnail">EN</span>
+                {{-- <span class="icon-thumbnail">EN</span> --}}
               </li>
               
 
