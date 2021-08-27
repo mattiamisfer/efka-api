@@ -28,11 +28,19 @@
 		<!-- Odometer CSS-->
 		<link rel="stylesheet" href="{{ asset('assets/css/odometer.css')}}">
 		<!-- Style CSS -->
+
+		@if(App::isLocale('ar') )
+		<link rel="stylesheet" href="{{ asset('assets/css/style-arabic.css')}}">
+		@elseif(App::isLcaale('en'))
 		<link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
+		@endif
+
 		<!-- Responsive CSS -->
 		<link rel="stylesheet" href="{{ asset('assets/css/responsive.css')}}">
 		
 		<!-- Favicon -->
+
+	
 		<link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png')}}">
 		<!-- Title -->
 		<meta name="csrf-token" content="{{ csrf_token() }}">

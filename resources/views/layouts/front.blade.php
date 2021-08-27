@@ -32,26 +32,24 @@
     <link href="{{ asset('backend/assets/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css')}}" rel="stylesheet" type="text/css" media="screen">
     <link href="{{ asset('backend/assets/plugins/bootstrap-timepicker/bootstrap-timepicker.min.css')}}" rel="stylesheet" type="text/css" media="screen">
     <link href="{{ asset('backend/pages/css/pages-icons.css')}}" rel="stylesheet" type="text/css">
-    <link class="main-stylesheet" href="{{ asset('backend/pages/css/pages.css')}}" rel="stylesheet" type="text/css" />
+    @if(App::isLocale('ar') )
+    <link class="main-stylesheet" href="{{ asset('backend/pages/css/arabic-pages.css')}}" rel="stylesheet" type="text/css" />
 
+   @elseif(App::isLocale('en'))
+   <link class="main-stylesheet" href="{{ asset('backend/pages/css/pages.css')}}" rel="stylesheet" type="text/css" />
+
+   @endif
     <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
 
-    @if(App::isLocale('ar') )
-
-    <style type="stylesheet">
- .label  {
-        direction: rtl !important;
-      }
-    </style>
-      
-    @endif
+   
+    
 
   </head>
-  <body class="fixed-header dashboard">
+  <body class="fixed-header dashboard" >
     <!-- BEGIN SIDEBPANEL-->
-    <nav class="page-sidebar" data-pages="sidebar">
+    <nav class="page-sidebar" data-pages="sidebar" >
       <!-- BEGIN SIDEBAR MENU TOP TRAY CONTENT-->
-      <div class="sidebar-overlay-slide from-top" id="appMenu">
+      <div class="sidebar-overlay-slide from-top" id="appMenu" >
         <div class="row">
           <div class="col-xs-6 no-padding">
             <a href="#" class="p-l-40"><img src="assets/img/demo/social_app.svg" alt="socail">
