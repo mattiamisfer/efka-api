@@ -10,8 +10,8 @@
         <div class="inner">
           <!-- START BREADCRUMB -->
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">User</a></li>
-            <li class="breadcrumb-item active">Details</li>
+            <li class="breadcrumb-item"><a href="#">{{ __('common.users')}}</a></li>
+            <li class="breadcrumb-item active">{{__('common.details')}}</li>
           </ol>
           <!-- END BREADCRUMB -->
           <div class="row">
@@ -51,7 +51,7 @@
             </div>
             <div class="card-body">
               <h5>
-                   User Details
+                  {{ __('common.user_details')}}
                   </h5>
               <div class="row">
                   <div class="col-lg-3">
@@ -87,12 +87,12 @@
 
               <div class="row">
                   <div class="col-lg-3">
-                      <a href="{{ url('/') }}/muncipal/{{$users->document->muncipal}}">Freelances Certificate Copy
+                      <a href="{{ url('/') }}/muncipal/{{$users->document->muncipal}}">{{ __('common.freelance')}}
 
                       </a>
                   </div>
                   <div class="col-lg-3">
-                    <a href="{{ url('/') }}/commercial/{{$users->document->commercial}}">Saudi National ID Copy
+                    <a href="{{ url('/') }}/commercial/{{$users->document->commercial}}">{{ __('common.saudi_national')}}
 
 
 
@@ -100,7 +100,7 @@
                 </div>
               </div>
               <div class="row">
-                <h4>Branch Locations
+                <h4> {{ __('common.location')}}
                     @foreach ($users->branch as $item)
                     <div class="col-lg-12">
                       <h6>  {{$item->branch}}</h6>
@@ -117,12 +117,12 @@
                 @csrf
                
                 <div class="col-lg-8">
-                  <textarea name="" id="" class="form-control" cols="30" rows="10" placeholder="Enter Message"></textarea>
+                  <textarea name="" id="" class="form-control" cols="30" rows="10" placeholder="{{ __('common.enter_msg')}}"></textarea>
                   
                 </div>
 
                 <div class="col-lg-4">
-                  <button type="submit" class="btn btn-success">Approve User</button>
+                  <button type="submit" class="btn btn-success">{{__('common.approve_user')}}</button>
                 </div>
             
               </div>  </form>

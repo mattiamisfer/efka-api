@@ -55,7 +55,7 @@
           <img src="{{asset('assets/img/efa/efalogo.png')}}" alt="logo"
            data-src="{{asset('assets/img/efa/efalogo.png')}}"
            data-src-retina="{{asset('assets/img/efa/efalogo.png')}}" width="78" >
-          <p class="p-t-35">Sign into your pages account</p>
+          <p class="p-t-35">{{ __('common.sigb_in_data')}}</p>
           @if (Session::has('failed'))
              <p class="p-t-35" style="color:red;">  {{ Session::get('failed') }}</p>
          
@@ -65,7 +65,7 @@
             <!-- START Form Control-->
             @csrf
             <div class="form-group form-group-default">
-              <label>Login</label>
+              <label>{{ __('common.email')}}</label>
               <div class="controls">
                 <input type="text" name="email" placeholder="User Name" class="form-control" required>
               </div>
@@ -73,7 +73,7 @@
             <!-- END Form Control-->
             <!-- START Form Control-->
             <div class="form-group form-group-default">
-              <label>Password</label>
+              <label>{{ __('common.password')}}</label>
               <div class="controls">
                 <input type="password" class="form-control" name="password" placeholder="Credentials" required>
               </div>
@@ -83,15 +83,15 @@
               <div class="col-md-6 no-padding sm-p-l-10">
                 <div class="checkbox ">
                   <input type="checkbox" value="1" id="checkbox1">
-                  <label for="checkbox1">Keep Me Signed in</label>
+                  <label for="checkbox1">{{ __('common.keep_me')}}</label>
                 </div>
               </div>
               <div class="col-md-6 d-flex align-items-center justify-content-end">
-                <a href="#" class="text-info small">Help? Contact Support</a>
+                <a href="#" class="text-info small">{{ __('common.help_me')}}</a>
               </div>
             </div>
             <!-- END Form Control-->
-            <button class="btn btn-primary btn-cons m-t-10" type="submit">Sign in</button>
+            <button class="btn btn-primary btn-cons m-t-10" type="submit">{{ __('common.sign_me')}}</button>
           </form>
           <!--END Login Form-->
        

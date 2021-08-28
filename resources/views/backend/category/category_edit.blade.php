@@ -10,8 +10,8 @@
         <div class="inner">
           <!-- START BREADCRUMB -->
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Category</a></li>
-            <li class="breadcrumb-item active">Edit</li>
+            <li class="breadcrumb-item"><a href="#">{{__('common.category')}}</a></li>
+            <li class="breadcrumb-item active">{{__('common.edit')}}</li>
           </ol>
           <!-- END BREADCRUMB -->
           <div class="row">
@@ -70,17 +70,17 @@
                     <div class="col-lg-12">
 
                         <div class="form-group form-group-default required">
-                          <label>Image</label>
+                          <label>{{__('common.image')}}</label>
                                <input type="file" class="form-control" name="image" id="image" >
                              <input type="hidden" name="current_img" value="{{$categories->image}}">
                              
                         </div>
                         <div class="form-group form-group-default required ">
-                        <label>Name</label>
+                        <label>{{__('common.name')}}</label>
                         <input type="text" value="{{$attribute['en']['name']}}" class="form-control" name="en[name]" required>
                       </div>
 
-                      <button class="btn btn-success" type="submit">Submit</button>
+                      <button class="btn btn-success" type="submit">{{__('common.submit')}}</button>
                       </div>
                
                 </div>
@@ -90,7 +90,7 @@
                 <div class="row column-seperation">
                     <div class="col-lg-12">
                         <div class="form-group form-group-default required ">
-                        <label>Name</label>
+                        <label>{{__('common.name')}}</label>
                         <input type="text" value="{{$attribute['ar']['name']}}" class="form-control" name="ar[name]" required>
                       </div>
                       </div>

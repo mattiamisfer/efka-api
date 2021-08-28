@@ -10,8 +10,8 @@
         <div class="inner">
           <!-- START BREADCRUMB -->
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Products</a></li>
-            <li class="breadcrumb-item active">Add</li>
+            <li class="breadcrumb-item"><a href="#">{{ __('common.product')}}</a></li>
+            <li class="breadcrumb-item active">{{ __('common.add_new')}}</li>
           </ol>
           <!-- END BREADCRUMB -->
           <div class="row">
@@ -51,13 +51,13 @@
          @endif
             <ul class="nav nav-tabs nav-tabs-simple" role="tablist" data-init-reponsive-tabs="dropdownfx">
               <li class="nav-item">
-                <a class="active" data-toggle="tab" role="tab" data-target="#tab2hellowWorld" href="#">General</a>
+                <a class="active" data-toggle="tab" role="tab" data-target="#tab2hellowWorld" href="#">{{ __('common.general')}}</a>
               </li>
               <li class="nav-item">
-                <a href="#" data-toggle="tab" role="tab" data-target="#tab2FollowUs">Data</a>
+                <a href="#" data-toggle="tab" role="tab" data-target="#tab2FollowUs">{{ __('common.data')}}</a>
               </li>
               <li class="nav-item">
-                <a href="#" data-toggle="tab" role="tab" data-target="#tab2FLinks">Links</a>
+                <a href="#" data-toggle="tab" role="tab" data-target="#tab2FLinks">{{ __('common.links')}}</a>
               </li>
               {{-- <li class="nav-item">
                 <a href="#" data-toggle="tab" role="tab" data-target="#tab2FollowUs">Option</a>
@@ -68,7 +68,7 @@
               </li> --}}
 
               <li class="nav-item">
-                <a href="#" data-toggle="tab" role="tab" data-target="#tab2Image">Image</a>
+                <a href="#" data-toggle="tab" role="tab" data-target="#tab2Image">{{ __('common.image')}}</a>
               </li>
              
              
@@ -83,7 +83,7 @@
                               <a class="active" data-toggle="tab" role="tab" data-target="#tab2english" href="#">English</a>
                             </li>
                             <li class="nav-item">
-                              <a href="#" data-toggle="tab" role="tab" data-target="#tab2arabic">Arabic</a>
+                              <a href="#" data-toggle="tab" role="tab" data-target="#tab2arabic">عربي</a>
                             </li>
                          
                           </ul>
@@ -116,7 +116,7 @@
                                       </div>
                                 
                                   </div>
-                                  <button class="btn btn-success" type="submit">Submit</button>
+                                  <button class="btn btn-success" type="submit">{{ __('common.submit')}}</button>
                             </div>
                             <div class="tab-pane " id="tab2arabic">
                               <div class="row column-seperation">
@@ -483,7 +483,7 @@
      // $('.fileupload').change(function(){
 
         const ID = $(this).attr("id");
-  //  alert(ID);
+   // alert(ID);
         const file = this.files[0];
         console.log(file);
         if (file){

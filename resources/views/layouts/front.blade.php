@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Dashboard</title>
+    <title> {{ __('common.dashboard')}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
     <link rel="apple-touch-icon" href="pages/ico/60.png">
     <link rel="apple-touch-icon" sizes="76x76" href="pages/ico/76.png">
@@ -91,8 +91,8 @@
         <ul class="menu-items">
           <li class="m-t-30 ">
             <a href="{{route('dashboard.dashboard.index' )}}" class="detailed">
-              <span class="title">Dashboard</span>
-              <span class="details">12 New Updates</span>
+              <span class="title">{{  __('common.dashboard')}}</span>
+              {{-- <span class="details">12 New Updates</span> --}}
             </a>
             <span class="bg-success icon-thumbnail"><i class="pg-home"></i></span>
           </li>
@@ -103,32 +103,32 @@
 
           <li class="m-t-30 ">
             <a href="{{route('user.user.index' )}}" class="detailed">
-              <span class="title">Users</span>
+              <span class="title">{{__('common.users')}}</span>
              </a>
             <span class="bg-success icon-thumbnail"><i class="fa fa-user"></i></span>
           </li>
           @endif
         
           <li>
-            <a href="javascript:;"><span class="title">Catalog</span>
+            <a href="javascript:;"><span class="title">{{__('common.catalog')}}</span>
             <span class=" arrow"></span></a>
             <span class="icon-thumbnail"><i class="pg-layouts2"></i></span>
             <ul class="sub-menu">
               @if (Auth::user()->role =='admin')
               <li class="">
-                <a href="{{route('category.index')}}">Category </a>
+                <a href="{{route('category.index')}}">{{ __('common.category')}} </a>
                 <span class="icon-thumbnail">CT</span>
               </li>
            
               <li class="">
-                <a href="{{route('product.index')}}">Product</a>
+                <a href="{{route('product.index')}}">{{ __('common.product')}}</a>
                 <span class="icon-thumbnail">PT</span>
               </li>
               @endif
 
               @if (Auth::user()->role =='vendor')
               <li class="">
-                <a href="{{route('product.product.index')}}">Product</a>
+                <a href="{{route('product.product.index')}}">{{ __('common.product')}}</a>
                 <span class="icon-thumbnail">PT</span>
               </li>
               @endif
@@ -137,7 +137,7 @@
 
 
           <li>
-            <a href="javascript:;"><span class="title">Language</span>
+            <a href="javascript:;"><span class="title">{{ __('common.language')}}</span>
             <span class=" arrow"></span></a>
             <span class="icon-thumbnail"><i class="pg-layouts2"></i></span>
             <ul class="sub-menu">
@@ -313,7 +313,7 @@
             </li>
           </ul>
           <!-- END NOTIFICATIONS LIST -->
-          <a href="#" class="search-link d-lg-inline-block d-none" data-toggle="search"><i class="pg-search"></i>Type anywhere to <span class="bold">search</span></a>
+          <a href="#" class="search-link d-lg-inline-block d-none" data-toggle="search"><i class="pg-search"></i>{{__('common.type')}} </a>
         </div>
         <div class="d-flex align-items-center">
           <!-- START User Info-->
@@ -347,8 +347,8 @@
 
               <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <button  type="submit" class="clearfix bg-master-lighter dropdown-item">Logout</button>
-                <span class="pull-right"><i class="pg-power"></i></span>
+                <button  type="submit" class="clearfix bg-master-lighter dropdown-item"> {{__('common.logout')}}      <span class="pull-right"><i class="pg-power"></i></span></button>
+           
             </form>
             </div>
           </div>

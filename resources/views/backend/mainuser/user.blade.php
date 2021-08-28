@@ -10,8 +10,8 @@
         <div class="inner">
           <!-- START BREADCRUMB -->
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Users</a></li>
-            <li class="breadcrumb-item active">List</li>
+            <li class="breadcrumb-item"><a href="#">{{__('common.users')}}</a></li>
+            <li class="breadcrumb-item active">{{ __('common.list')}}</li>
           </ol>
           <!-- END BREADCRUMB -->
           <div class="row">
@@ -61,11 +61,11 @@
             <table class="table table-hover demo-table-dynamic table-responsive-block" id="tableWithDynamicRows">
               <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Status</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
+                  <th>{{ __('common.name')}}</th>
+                  <th>{{ __('common.email') }}</th>
+                  <th>{{ __('common.status')}}</th>
+                  <th>{{ __('common.edit')}}</th>
+                  <th>{{ __('common.delete') }}</th>
                 </tr>
               </thead>
               <tbody>
@@ -82,9 +82,9 @@
             <td class="v-align-middle">
 
               @if($user->status ==1)
-              <span class="badge badge-primary">Approved</span>
+              <span class="badge badge-primary">{{ __('common.approved')}}</span>
               @elseif($user->status ==0)
-              <span class="badge badge-danger">Pending</span>
+              <span class="badge badge-danger">{{ __('common.pending')}}</span>
 
               @endif
              

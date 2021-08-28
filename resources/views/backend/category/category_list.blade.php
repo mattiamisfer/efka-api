@@ -10,8 +10,8 @@
         <div class="inner">
           <!-- START BREADCRUMB -->
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Category</a></li>
-            <li class="breadcrumb-item active">Lists</li>
+            <li class="breadcrumb-item"><a href="#">{{ __('common.category')}}</a></li>
+            <li class="breadcrumb-item active">{{__('common.list')}}</li>
           </ol>
           <!-- END BREADCRUMB -->
           <div class="row">
@@ -40,7 +40,8 @@
             <div class="pull-right">
               <div class="col-xs-12">
            
-                <a id="show-modal" href="{{route('category.create')}}" class="btn btn-primary btn-cons"><i class="fa fa-plus"></i> Add New
+                <a id="show-modal" href="{{route('category.create')}}" class="btn btn-primary btn-cons"><i class="fa fa-plus"></i> 
+                  {{__('common.add_new')}}
                 </a>
               </div>
             </div>
@@ -61,10 +62,10 @@
             <table class="table table-hover demo-table-dynamic table-responsive-block" id="tableWithDynamicRows">
               <thead>
                 <tr>
-                  <th>Name</th>
+                  <th>{{__("common.name")}}</th>
                  
-                  <th>Edit</th>
-                  <th>Delete</th>
+                  <th>{{ __('common.edit')}}</th>
+                  <th>{{ __('common.delete')}}</th>
                 </tr>
               </thead>
               <tbody>

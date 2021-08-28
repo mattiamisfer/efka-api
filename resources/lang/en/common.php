@@ -44,6 +44,18 @@ return [
     'submit'=> 'Submit',
     'logout'=> 'Logout',
     'change_password'=> 'Change Password',
+    'arabic' => 'Arabic',
+    'image' => 'Image',
+    'stock' => 'Stock',
+    'general' => 'GENERAL',
+    'data' => 'DATA',
+    'links'  => 'LINKS',
+    'catalog' => 'Catalog',
+    'enter_msg' => 'Enter Message',
+    'details' => 'Details',
+    'type' => 'Type anywhere to search',
+
+    'dashboard' => 'Dashboard'
     
 
 
