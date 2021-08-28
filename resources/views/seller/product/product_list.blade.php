@@ -40,7 +40,7 @@
             <div class="pull-right">
               <div class="col-xs-12">
            
-                <a id="show-modal" href="{{route('product.create')}}" class="btn btn-primary btn-cons"><i class="fa fa-plus"></i> 
+                <a id="show-modal" href="{{route('product.product.create')}}" class="btn btn-primary btn-cons"><i class="fa fa-plus"></i> 
                   {{__('common.add_new')}}
                 </a>
               </div>
@@ -89,13 +89,13 @@
 
             </td>
             <td class="v-align-middle">
-                 <a href="{{route('product.edit', $product->id)}}"><i class="fa fa-edit"></i> </a>
+                 <a href="{{route('product.product.edit', $product->id)}}"><i class="fa fa-edit"></i> </a>
 
 
          
               </td>
               <td class="v-align-middle">
-              <form method="post" action="{{ route('product.destroy', $product->id) }}">
+              <form method="post" action="{{ route('product.product.destroy', $product->id) }}">
                 @csrf
                 <input type="hidden" name="_method" value="DELETE">
               <button type="submit" class="btn">

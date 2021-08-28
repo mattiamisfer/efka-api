@@ -35,7 +35,7 @@
       <div class="row">
        
         <div class="col-lg-12">
-            <form class="" role="form"  action="{{route('product.store')}}" method="POST" enctype="multipart/form-data" >
+            <form class="" role="form"  action="{{route('product.product.store')}}" method="POST" enctype="multipart/form-data" >
               @csrf
           <div class="card card-borderless">
             @if (Session::has('success'))
