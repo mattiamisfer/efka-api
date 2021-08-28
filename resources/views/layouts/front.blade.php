@@ -117,19 +117,19 @@
               @if (Auth::user()->role =='admin')
               <li class="">
                 <a href="{{route('category.index')}}">{{ __('common.category')}} </a>
-                <span class="icon-thumbnail">CT</span>
+                {{-- <span class="icon-thumbnail">CT</span> --}}
               </li>
            
               <li class="">
                 <a href="{{route('product.index')}}">{{ __('common.product')}}</a>
-                <span class="icon-thumbnail">PT</span>
+                {{-- <span class="icon-thumbnail">PT</span> --}}
               </li>
               @endif
 
               @if (Auth::user()->role =='vendor')
               <li class="">
                 <a href="{{route('product.product.index')}}">{{ __('common.product')}}</a>
-                <span class="icon-thumbnail">PT</span>
+                {{-- <span class="icon-thumbnail">PT</span> --}}
               </li>
               @endif
             </ul>
