@@ -34,7 +34,7 @@ class CategoryController extends Controller
                           
                       'id' => $categories->id,
                       'name' => $categories->name,
-                      'image' => $categories->image
+                      'image' =>  public_path('category_image/') .$categories->image
                     
                   ]; 
               }
