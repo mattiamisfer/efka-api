@@ -120,10 +120,10 @@
                 {{-- <span class="icon-thumbnail">CT</span> --}}
               </li>
            
-              <li class="">
+              {{-- <li class="">
                 <a href="{{route('product.index')}}">{{ __('common.product')}}</a>
                 {{-- <span class="icon-thumbnail">PT</span> --}}
-              </li>
+              </li> --}}
               @endif
 
               @if (Auth::user()->role =='vendor')
