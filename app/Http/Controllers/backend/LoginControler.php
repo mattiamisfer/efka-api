@@ -80,7 +80,7 @@ class LoginControler extends Controller
 
     public function logout(Request $request) {
     //  return  Auth::logout();
-    return redirect('login')->with(Auth::logout());
+    return redirect('/')->with(Auth::logout());
 
     }
     /**

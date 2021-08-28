@@ -58,7 +58,7 @@
                 <a class="active" data-toggle="tab" role="tab" data-target="#tab2hellowWorld" href="#">English</a>
               </li>
               <li class="nav-item">
-                <a href="#" data-toggle="tab" role="tab" data-target="#tab2FollowUs">{{__('common.arabic')}}</a>
+                <a href="#" data-toggle="tab" role="tab" data-target="#tab2FollowUs"> عربي</a>
               </li>
            
              

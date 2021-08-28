@@ -74,6 +74,9 @@ Route::get('/greeting/{locale}', function ($locale) {
 });
 
 
+Route::get('/logout',[LoginControler::class,'logout'])->name('user.logout');
+
+
 
  Route::group(['prefix'=>'admin', 'middleware'=>['isAdmin','auth','PreventBackHistory']], function(){
     Route::resource('dashboard', DashboardController::class, ['as' => 'dashboard']);

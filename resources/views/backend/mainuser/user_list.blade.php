@@ -51,7 +51,7 @@
             </div>
             <div class="card-body">
               <h5>
-                  {{ __('common.user_details')}}
+                  {{ __('common.details')}}
                   </h5>
               <div class="row">
                   <div class="col-lg-3">
