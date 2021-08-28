@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html >
+
   <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta charset="utf-8" />
@@ -23,8 +24,14 @@
     <link href="{{ asset('backend/assets/plugins/select2/css/select2.min.css')}}" rel="stylesheet" type="text/css" media="screen" />
     <link href="{{ asset('backend/assets/plugins/switchery/css/switchery.min.css')}}" rel="stylesheet" type="text/css" media="screen" />
     <link href="{{ asset('backend/pages/css/pages-icons.css')}}" rel="stylesheet" type="text/css">
-    <link class="main-stylesheet" href="{{ asset('backend/pages/css/pages.css')}}" rel="stylesheet" type="text/css" />
-    <script type="text/javascript">
+    @if(App::isLocale('ar') )
+    <link class="main-stylesheet" href="{{ asset('backend/pages/css/arabic-pages.css')}}" rel="stylesheet" type="text/css" />
+
+   @elseif(App::isLocale('en'))
+   <link class="main-stylesheet" href="{{ asset('backend/pages/css/pages.css')}}" rel="stylesheet" type="text/css" />
+
+   @endif
+       <script type="text/javascript">
     window.onload = function()
     {
       // fix for windows 8

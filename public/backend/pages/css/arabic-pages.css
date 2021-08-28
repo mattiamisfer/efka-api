@@ -10979,7 +10979,7 @@ Responsive Util
   width: 496px;
   display: block;
   position: relative;
-  float: right;
+  float: left;
 }
 .login-wrapper .bg-caption {
   width: 500px;
