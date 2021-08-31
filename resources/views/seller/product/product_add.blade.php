@@ -99,10 +99,10 @@
                             @elseif(App::isLocale('ar'))
                            
                             <li class="nav-item">
-                              <a href="#" data-toggle="tab" role="tab" data-target="#tab2arabic">عربي</a>
+                              <a href="#" class="active" data-toggle="tab" role="tab" data-target="#tab2arabic">عربي</a>
                             </li>
                             <li class="nav-item">
-                              <a class="active" data-toggle="tab" role="tab" data-target="#tab2english" href="#">English</a>
+                              <a  data-toggle="tab" role="tab" data-target="#tab2english" href="#">English</a>
                             </li>
                             @endif
                          
