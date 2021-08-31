@@ -92,8 +92,13 @@
             <div class="row">
               <div class="col-md-6 no-padding sm-p-l-10">
                 <div class="checkbox ">
-                  <input type="checkbox" value="1" id="checkbox1">
-                  <label for="checkbox1">{{ __('common.keep_me')}}</label>
+                  <label   for="checkbox1">{{ __('common.keep_me')}}</label>
+              
+                  <input    type="checkbox" value="1" id="checkbox1">
+
+              
+                  
+                  
                 </div>
               </div>
               <div class="col-md-6 d-flex align-items-center justify-content-end">
@@ -104,7 +109,7 @@
           
               @if (Route::has('password.request'))
               <a class="btn btn-link" href="{{ route('password.request') }}">
-                  {{ __('Forgot Your Password?') }}
+                  {{ __('register.forogt') }}
               </a>
           @endif
             </div>

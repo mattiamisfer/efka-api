@@ -41,7 +41,7 @@
             @if (Session::has('success'))
      
             <div class="alert alert-success" role="alert">
-              {{ Session::get('success') }}
+              {{ __('product.added')}}
             </div>
             @endif
             @if (Session::has('failure'))

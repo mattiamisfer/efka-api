@@ -116,11 +116,7 @@
               <form   method="POST" action="{{ route('status.update',$users->id)}}"> <div class="row">
                 @csrf
                
-                <div class="col-lg-8">
-                  <textarea name="" id="" class="form-control" cols="30" rows="10" placeholder="{{ __('common.enter_msg')}}"></textarea>
-                  
-                </div>
-
+           
                 <div class="col-lg-4">
                   <div class="form-group">
                     
@@ -134,8 +130,13 @@
                     </select>
                    </div>
                   
-                  <button type="submit" class="btn btn-success">{{__('common.submit')}}</button>
                 </div>
+                <div class="col-lg-8">
+                  <textarea name="" id="" class="form-control" cols="30" rows="10" placeholder="{{ __('common.enter_msg')}}"></textarea>
+                  <button type="submit" class="btn btn-success">{{__('common.submit')}}</button>
+
+                </div>
+
             
               </div>  </form>
             </div>

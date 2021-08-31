@@ -49,6 +49,6 @@ return [
     'freelancer' =>  'Freelances Certificate Copy',
     'saudi' => 'Saudi National ID Copy',
     'privacy' => 'Privacy policy
-    '
-
+    ',
+'forogt' =>'Forgot Your Password?'
 ];
