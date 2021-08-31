@@ -3,7 +3,7 @@
 
 return [
 
-    'welcome' => 'نموذج طلب عضوية',
+    'welcome' =>  'نموذج تسجيل عضوية',
     'basic_info' => 'المعلومات الأساسية',
     'branch_details' => 'العنوان والمواقع',
     'account_details' => 'تفاصيل الحساب',

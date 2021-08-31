@@ -160,25 +160,25 @@
                         <label>{{  __('product.product_model')}}</label>
                         <input type="text" class="form-control" name="product_model" >
                       </div>
-                      <div class="form-group form-group-default required ">
+                      {{-- <div class="form-group form-group-default required ">
                         <label>{{  __('product.sku')}}</label>
                         <input type="text" class="form-control" name="product_sku" >
-                      </div>
-                      <div class="form-group form-group-default required ">
+                      </div> --}}
+                      {{-- <div class="form-group form-group-default required ">
                         <label>{{  __('product.ispn')}}</label>
                         <input type="text" class="form-control" name="product_ispn" >
-                      </div>
+                      </div> --}}
                       <div class="form-group form-group-default required ">
                         <label>{{  __('product.quantity')}}</label>
                         <input type="text" class="form-control" name="product_quantity" >
                       </div>
-                      <div class="form-group form-group-default required ">
+                      {{-- <div class="form-group form-group-default required ">
                         <label>{{  __('product.min_order')}} </label>
                         <input type="text" class="form-control" name="product_min_order" >
-                      </div>
+                      </div> --}}
                       <div class="form-group form-group-default required ">
                         <label>{{  __('product.price')}}</label>
-                        <input type="text" class="form-control" name="prodcut_price" >
+                        <input type="text" class="form-control" name="prodduct_price" >
                       </div>
 
 

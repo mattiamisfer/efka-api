@@ -73,10 +73,10 @@ class VendorProductController extends Controller
      try {
         $product = new Product();
         $product->product_model = $request->product_model; 
-        $product->product_sku = $request->product_sku; 
-        $product->product_ispn = $request->product_ispn; 
+        $product->product_sku ='null'; 
+        $product->product_ispn ='null';  
         $product->product_quantity = $request->product_quantity; 
-        $product->product_min_order = $request->product_min_order; 
+        $product->product_min_order = 000;
         $product->product_price = $request->product_price; 
         $product->product_weight_value = $request->product_weight_value; 
         $product->product_weight_type = $request->product_weight_type; 

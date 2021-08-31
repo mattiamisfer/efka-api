@@ -4983,7 +4983,7 @@ body > .pgn-wrapper {
   font-weight: 500;
   letter-spacing: 0.06em;
   color: rgba(98, 98, 98, 0.7);
-  font-size: 10.5px;
+  font-size: 12.5px;
   min-width: 70px;
   text-transform: uppercase;
   border-color: transparent;
@@ -7278,7 +7278,7 @@ body.rtl .checkbox label::after {
 }
 .form-group label:not(.error) {
   font-family: 'Montserrat';
-  font-size: 10.5px;
+  font-size: 12.5px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   font-weight: 500;
@@ -7304,13 +7304,13 @@ body.rtl .checkbox label::after {
   -webkit-transition: background-color 0.2s ease;
   transition: background-color 0.2s ease;
 }
-.form-group-default.required:after {
+.form-group-default.required::before {
   color: #f55753;
   content: "*";
   font-family: arial;
   font-size: 20px;
   position: absolute;
-  right: 12px;
+  left: 12px;
   top: 6px;
 }
 .form-group-default.disabled {

@@ -122,7 +122,7 @@ return $e;
 
           BranchInfo::create($data);
          }
-         session()->flash('msg', 'Successfully done the Registration...');
+         session()->flash('msg', 'تم التسجيل بنجاح');
 
           return redirect()->to('/');
      //    return redirect()->to('account-details/'.$request->user_id);
