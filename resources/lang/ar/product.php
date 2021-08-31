@@ -24,5 +24,5 @@ return [
 'english' => 'اللغة الإنجليزية ',
 'arabic' => 'اللغة العربية ',
 'kilogram' => ' كيلوغرام',
-'added' => 'Product Added'
+'added' => 'تمت اضافة المنتج'
 ];
