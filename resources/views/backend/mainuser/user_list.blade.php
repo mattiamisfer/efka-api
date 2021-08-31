@@ -133,12 +133,21 @@
                 </div>
                 <div class="col-lg-8">
                   <textarea name="" id="" class="form-control" cols="30" rows="10" placeholder="{{ __('common.enter_msg')}}"></textarea>
-                  <button type="submit" class="btn btn-success">{{__('common.submit')}}</button>
+             
 
                 </div>
 
             
-              </div>  </form>
+              </div>
+
+              <div class="row">
+                <button type="submit" class="btn btn-success">{{__('common.submit')}}</button>
+              </div>
+            
+            
+            
+            
+            </form>
             </div>
           </div>
      </div>

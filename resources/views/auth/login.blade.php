@@ -92,12 +92,12 @@
             <div class="row">
               <div class="col-md-6 no-padding sm-p-l-10">
                 <div class="checkbox ">
-                  <label   for="checkbox1">{{ __('common.keep_me')}}</label>
               
                   <input    type="checkbox" value="1" id="checkbox1">
 
               
-                  
+                  <label   for="checkbox1">{{ __('common.keep_me')}}</label>
+
                   
                 </div>
               </div>
