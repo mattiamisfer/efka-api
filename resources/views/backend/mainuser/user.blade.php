@@ -82,9 +82,11 @@
             <td class="v-align-middle">
 
               @if($user->status ==1)
-              <span class="badge badge-primary">{{ __('common.approved')}}</span>
+              <span class="badge badge-success">{{ __('common.approved')}}</span>
               @elseif($user->status ==0)
               <span class="badge badge-danger">{{ __('common.pending')}}</span>
+              @elseif($user->status ==2)
+              <span class="badge badge-danger">{{ __('common.reject')}}</span>
 
               @endif
              

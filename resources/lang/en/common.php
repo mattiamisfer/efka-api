@@ -55,7 +55,8 @@ return [
     'details' => 'Details',
     'type' => 'Type anywhere to search',
 
-    'dashboard' => 'Dashboard'
+    'dashboard' => 'Dashboard',
+    'reject' => 'Reject'
     
 
 

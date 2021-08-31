@@ -23,5 +23,6 @@ return [
 'date_start' => 'Date Start',
 'english' => 'اللغة الإنجليزية ',
 'arabic' => 'اللغة العربية ',
-'kilogram' => ' كيلوغرام'
+'kilogram' => ' كيلوغرام',
+'added' => 'Product Added'
 ];

@@ -23,8 +23,8 @@ return [
 'date_start' => 'Date Start',
 'english' => 'ENGLISH',
 'arabic' => 'ARABIC',
-'kilogram' => 'Kilo Gram'
-// '' => '',
+'kilogram' => 'Kilo Gram',
+  'added' => 'تمت اضافة المنتج'
 // '' => '',
 // '' => '',
 // '' => '',

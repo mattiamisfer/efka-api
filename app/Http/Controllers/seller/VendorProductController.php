@@ -18,8 +18,7 @@ class VendorProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    { 
         $locale = App::currentLocale();
 
         App::setLocale($locale);
@@ -27,7 +26,7 @@ class VendorProductController extends Controller
 
 
         // App::setLocale($locale);
-            $products = Product::translatedIn($locale)->where('user_id',Auth::user()->id)->paginate(10);
+               $products = Product::translatedIn($locale)->where('user_id',Auth::user()->id)->paginate(10);
                 
        
          
@@ -35,7 +34,7 @@ class VendorProductController extends Controller
        
 
             //return Auth::user()->role;
-        return view('seller.product.product_list',compact('products'));
+      return view('seller.product.product_list',compact('products'));
     }
 
     /**

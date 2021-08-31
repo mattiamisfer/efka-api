@@ -25,11 +25,13 @@ class CreateProductTranslationsTable extends Migration
             $table->string('product_meta_tag_title');
             $table->string('product_meta_tag_description');
             $table->string('product_meta_tag_keyword');
-            $table->bigInteger('product_id');
+            $table->unsignedBigInteger('product_id');
+           // $table->unsignedBigInteger('user_id');
 
+            $table->foreign('product_id')->references('id')->on('products');
             $table->timestamps();
         });
-    }
+    }  
 
     /**
      * Reverse the migrations.

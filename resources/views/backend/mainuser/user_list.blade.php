@@ -87,12 +87,12 @@
 
               <div class="row">
                   <div class="col-lg-3">
-                      <a href="{{ url('/') }}/muncipal/{{$users->document->muncipal}}">{{ __('common.freelance')}}
+                      <a  target="_blank" href="{{ url('/') }}/muncipal/{{$users->document->muncipal}}">{{ __('common.freelance')}}
 
                       </a>
                   </div>
                   <div class="col-lg-3">
-                    <a href="{{ url('/') }}/commercial/{{$users->document->commercial}}">{{ __('common.saudi_national')}}
+                    <a  target="_blank"  href="{{ url('/') }}/commercial/{{$users->document->commercial}}">{{ __('common.saudi_national')}}
 
 
 
@@ -122,7 +122,19 @@
                 </div>
 
                 <div class="col-lg-4">
-                  <button type="submit" class="btn btn-success">{{__('common.approve_user')}}</button>
+                  <div class="form-group">
+                    
+                    <select class="form-control" data-init-plugin="select2" name="status">
+                      
+                      <option value="">Choose Status</option>
+                        <option value="1">Accpet</option>
+                        <option value="2">Reject</option>
+                      
+                    
+                    </select>
+                   </div>
+                  
+                  <button type="submit" class="btn btn-success">{{__('common.submit')}}</button>
                 </div>
             
               </div>  </form>

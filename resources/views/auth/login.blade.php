@@ -86,6 +86,9 @@
               </div>
             </div>
             <!-- START Form Control-->
+ 
+
+            
             <div class="row">
               <div class="col-md-6 no-padding sm-p-l-10">
                 <div class="checkbox ">
@@ -97,6 +100,15 @@
                 <a href="#" class="text-info small">{{ __('common.help_me')}}</a>
               </div>
             </div>
+            <div class="row">
+          
+              @if (Route::has('password.request'))
+              <a class="btn btn-link" href="{{ route('password.request') }}">
+                  {{ __('Forgot Your Password?') }}
+              </a>
+          @endif
+            </div>
+    
             <!-- END Form Control-->
             <button class="btn btn-primary btn-cons m-t-10" type="submit">{{ __('common.sign_me')}}</button>
           </form>

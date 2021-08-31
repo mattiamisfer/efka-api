@@ -8,7 +8,8 @@ use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 use Astrotomic\Translatable\Translatable;
 class Product extends Model implements TranslatableContract
 {
-    use HasFactory,Translatable;
+    use HasFactory;
+    use Translatable;
     protected $translatedAttributes = ['product_name',
     'product_description','product_meta_tag_title','product_meta_tag_description','product_meta_tag_keyword'
     ];

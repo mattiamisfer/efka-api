@@ -10,13 +10,15 @@ class ApproveController extends Controller
 {
     //
 
-    public function approve($id) {
+    public function approve(Request $request,$id) {
 
-        $membership = User::where('id',$id)->update(['status' => '1']);
+        $status = $request->status;
+
+        $membership = User::where('id',$id)->update(['status' => $status]);
         if($membership > 0) {
-            return  back()->with('success', 'Approved SucceessFully');  
+            return  redirect()->to('/admin/user')->with('success', 'Approved SucceessFully');  
         } else {
-            return back()->with('failed', 'Some error Occured'); 
+            return redirect()->to('/admin/user')->with('failed', 'Some error Occured'); 
         }
 
     }

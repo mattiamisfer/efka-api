@@ -74,7 +74,7 @@ Route::get('/greeting/{locale}', function ($locale) {
 });
 
 
-Route::get('/logout',[LoginControler::class,'logout'])->name('user.logout');
+
 
 
 
@@ -84,7 +84,7 @@ Route::get('/logout',[LoginControler::class,'logout'])->name('user.logout');
     Route::resource('product', ProductControler::class);
     Route::resource('category', CategoryController::class);
     Route::resource('user', MainUserController::class,['as' => 'user']);
-
+    Route::get('/logout',[LoginControler::class,'logout'])->name('admin.logout');
     Route::post('/status-update/{id}',[ApproveController::class,'approve'])->name('status.update');
    
 });
@@ -92,6 +92,7 @@ Route::get('/logout',[LoginControler::class,'logout'])->name('user.logout');
 Route::group(['prefix'=>'vendor', 'middleware'=>['isVendor','auth','PreventBackHistory']], function(){
    // Route::resource('category', CategoryController::class,['as' => 'category']);
    Route::resource('product', VendorProductController::class,['as' => 'product']);
+ Route::get('/logout',[LoginControler::class,'logout'])->name('user.logout');
 });
 
 

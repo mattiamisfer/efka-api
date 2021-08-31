@@ -156,19 +156,36 @@
          
             </ul>
           </li>
+          @if (Auth::user()->role =='vendor')
           <li class="m-t-30 ">
             {{-- <a href="{{route('dashboard.dashboard.index' )}}" class="detailed">
               <span class="title">{{  __('common.dashboard')}}</span>
              </a> --}}
              {{-- <form method="POST" action="{{ route('logout') }}">
               @csrf --}}
-              <a   href="{{ route('user.logout') }}" class="detailed">  
+              <a   href="{{  route('user.logout') }}" class="detailed">  
                 <span class="title">{{  __('common.logout')}}</span>
               </a>
               <span class="bg-success icon-thumbnail"><i class="pg-power"></i></span>
            
          
           </li>
+
+          @elseif(Auth::user()->role=='admin')
+          <li class="m-t-30 ">
+            {{-- <a href="{{route('dashboard.dashboard.index' )}}" class="detailed">
+              <span class="title">{{  __('common.dashboard')}}</span>
+             </a> --}}
+             {{-- <form method="POST" action="{{ route('logout') }}">
+              @csrf --}}
+              <a   href="{{  route('admin.logout') }}" class="detailed">  
+                <span class="title">{{  __('common.logout')}}</span>
+              </a>
+              <span class="bg-success icon-thumbnail"><i class="pg-power"></i></span>
+           
+         
+          </li>
+          @endif
          
         
           

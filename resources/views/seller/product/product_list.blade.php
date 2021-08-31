@@ -74,7 +74,7 @@
           @foreach ($products as $product)
           <tr>
             <td class="v-align-middle">
-              <p>{{$product->product_name}}</p>
+              <p>{{$product->product_name}}...</p>
             </td>
             <td class="v-align-middle">
               <p><img class="" src="{{ asset('main_product/') }}/{{ $product->image }}" width="100" height="100"/></p>

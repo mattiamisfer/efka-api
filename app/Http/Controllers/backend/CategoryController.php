@@ -21,7 +21,7 @@ class CategoryController extends Controller
 
         $locale = App::currentLocale();
 
-        App::setLocale($locale);
+         App::setLocale($locale);
 
         // App::setLocale($locale);
             $categories = Category::translatedIn($locale)->paginate(10);

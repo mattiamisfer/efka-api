@@ -56,7 +56,8 @@ return [
     'details' => '
     تفاصيل',
     'type' => 'اكتب في أي مكان للبحث',
-    'dashboard' => 'وحة التحكم'
+    'dashboard' => 'وحة التحكم',
+    'reject' => 'Reject'
 
 
 ];
