@@ -56,7 +56,9 @@ return [
     'type' => 'Type anywhere to search',
 
     'dashboard' => 'Dashboard',
-    'reject' => 'Reject'
+    'reject' => 'Reject',
+    'approve_request' => 'Approve Request',
+    'reject_request' => 'Reject Request'
     
 
 

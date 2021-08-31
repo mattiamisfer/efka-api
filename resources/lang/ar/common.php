@@ -55,9 +55,10 @@ return [
     'enter_msg' => 'أدخل رسالة'   ,
     'details' => '
     تفاصيل',
-    'type' => 'اكتب في أي مكان للبحث',
+    'type' =>  'أبحث هنا',
     'dashboard' => 'وحة التحكم',
-    'reject' => 'Reject'
-
+    'reject' => 'Reject',
+    'approve_request' => 'اعتماد الطلب',
+    'reject_request' => 'رفض الطلب'
 
 ];

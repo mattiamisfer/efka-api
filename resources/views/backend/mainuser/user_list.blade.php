@@ -127,8 +127,8 @@
                     <select class="form-control" data-init-plugin="select2" name="status">
                       
                       <option value="">Choose Status</option>
-                        <option value="1">Accpet</option>
-                        <option value="2">Reject</option>
+                        <option value="1">{{ __('common.approve_request')}}</option>
+                        <option value="2">{{ __('common.reject_request')}}</option>
                       
                     
                     </select>
