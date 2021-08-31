@@ -79,12 +79,26 @@
                     <div class="col-lg-12">
                         <div class="card card-borderless">
                           <ul class="nav nav-tabs nav-tabs-simple" role="tablist" data-init-reponsive-tabs="dropdownfx">
+                           
+                           @if(App::isLocale('en'))
+                             
+                        
                             <li class="nav-item">
                               <a class="active" data-toggle="tab" role="tab" data-target="#tab2english" href="#">English</a>
                             </li>
                             <li class="nav-item">
                               <a href="#" data-toggle="tab" role="tab" data-target="#tab2arabic">عربي</a>
                             </li>
+
+                            @elseif(App::isLocale('ar'))
+                           
+                            <li class="nav-item">
+                              <a href="#" data-toggle="tab" role="tab" data-target="#tab2arabic">عربي</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="active" data-toggle="tab" role="tab" data-target="#tab2english" href="#">English</a>
+                            </li>
+                            @endif
                          
                           </ul>
                           <div class="tab-content">
@@ -192,9 +206,13 @@
                         <div class="col-md-6">
                           <select class="form-control" data-init-plugin="select2" name="product_weight_type">
                             <option value="">{{  __('product.kilogram')}}</option>
-                              <option value="CA">gram</option>
-                              <option value="NV">Pound</option>
-                              <option value="NV">Once</option>
+                              <option value="gram">gram</option>
+                              <option value="Pound">Pound</option>
+                              <option value="Once">Once</option>
+                              <option value="Pieces">Pieces</option>
+                              <option value="Packs">Packs</option>
+                              
+                              <option value="Litre">Litre</option>
                            
                           
                           </select>
