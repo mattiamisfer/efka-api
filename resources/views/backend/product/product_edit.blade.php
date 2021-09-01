@@ -298,7 +298,7 @@
                  
                   <div class="image-upload">
                     <label >
-                      <img id="previewImg0" src="https://icon-library.net/images/upload-photo-icon/upload-photo-icon-21.jpg" style="width: 100px; height: 100px;" />
+                      <img id="previewImg0" src="{{ asset('main_product/',$product)}}" style="width: 100px; height: 100px;" />
                     </label>
               
                     <input   type="file" name="main_image" class="fileupload"   id="0" />

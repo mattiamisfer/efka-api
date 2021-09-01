@@ -326,7 +326,7 @@
 
                     <input type="hidden" name="img_exist" value="{{$products->image}}" />
                     <label >
-                      <img id="previewImg0" src="https://icon-library.net/images/upload-photo-icon/upload-photo-icon-21.jpg" style="width: 100px; height: 100px;" />
+                      <img id="previewImg0" src="{{ asset('main_product/')}}/{{$products->image}}" style="width: 100px; height: 100px;" />
                     </label>
               
                     <input   type="file" name="main_image" class="fileupload"   id="0" />
