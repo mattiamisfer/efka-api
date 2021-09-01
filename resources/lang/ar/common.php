@@ -59,6 +59,8 @@ return [
     'dashboard' => 'وحة التحكم',
     'reject' => 'Reject',
     'approve_request' => 'اعتماد الطلب',
-    'reject_request' => 'رفض الطلب'
+    'reject_request' => 'رفض الطلب',
+    'send' => 'إرسال
+    '
 
 ];

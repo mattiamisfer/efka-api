@@ -148,7 +148,7 @@
               </div>
 
               <div class="row">
-                <button type="submit" class="btn btn-success">{{__('common.submit')}}</button>
+                <button type="submit" class="btn btn-success">{{__('common.send')}}</button>
               </div>
             
             

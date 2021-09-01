@@ -58,7 +58,9 @@ return [
     'dashboard' => 'Dashboard',
     'reject' => 'Reject',
     'approve_request' => 'Approve Request',
-    'reject_request' => 'Reject Request'
+    'reject_request' => 'Reject Request',
+
+    'send' => 'Submit'
     
 
 
