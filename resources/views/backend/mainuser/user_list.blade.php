@@ -89,7 +89,7 @@
                 {{-- muncipal --}}
                 @if(!empty($users->document->muncipal))
                   <div class="col-lg-3">
-                      <a  target="_blank" href="{{ asset('muncipal/') }}/{{$users->document->commercial}}">{{ __('common.freelance')}}
+                      <a  target="_blank" href="{{ asset('muncipal/') }}/{{$users->document->muncipal}}">{{ __('common.freelance')}}
 
                       </a>
                   </div>
