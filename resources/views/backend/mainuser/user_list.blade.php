@@ -86,11 +86,16 @@
               </div>
 
               <div class="row">
+
+                @if(!empty($users->document->muncipal))
                   <div class="col-lg-3">
                       <a  target="_blank" href="{{ asset('muncipal/') }}/{{$users->document->muncipal}}">{{ __('common.freelance')}}
 
                       </a>
                   </div>
+
+                  @endif
+                  @if(!empty($users->document->commercial))
                   <div class="col-lg-3">
                     <a  target="_blank"  href="{{ url('/') }}/commercial/{{$users->document->commercial}}">{{ __('common.saudi_national')}}
 
@@ -98,6 +103,8 @@
 
                     </a>
                 </div>
+                
+                @endif
               </div>
               <div class="row">
                 <h4> {{ __('common.location')}}
