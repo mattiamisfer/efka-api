@@ -87,6 +87,7 @@
 
               <div class="row">
                   <div class="col-lg-3">
+                    <img src="{{ asset('muncipal/') }}/{{$users->document->muncipal}}" />
                       <a  target="_blank" href="{{ asset('muncipal/') }}/{{$users->document->muncipal}}">{{ __('common.freelance')}}
 
                       </a>
