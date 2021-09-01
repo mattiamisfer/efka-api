@@ -97,7 +97,7 @@
                   @endif
                   @if(!empty($users->document->muncipal))
                   <div class="col-lg-3">
-                    <a  target="_blank"  href="{{ url('/') }}/commercial/{{$users->document->muncipal}}">{{ __('common.saudi_national')}}
+                    <a  target="_blank"  href="{{ url('/') }}/muncipal/{{$users->document->muncipal}}">{{ __('common.saudi_national')}}
 
 
 
