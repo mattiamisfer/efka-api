@@ -251,7 +251,7 @@ return $e->getMessage();
                 // $img =  ImageManagerStatic::make($request->file('contract'));
                 // $contract = Str::random().'_contract_pic.pdf';
                 // Storage::disk('contract')->put($image,$img);
-                $commercial = time() . '.' . $file->getClientOriginalExtension();
+                $commercial = 'freelance_'. time() . '.' . $file->getClientOriginalName();
                 $destinationPath = public_path() . '/commercial/';
                 $file->move($destinationPath, $commercial);
        
@@ -265,7 +265,7 @@ return $e->getMessage();
                 // $img =  ImageManagerStatic::make($request->file('contract'));
                 // $contract = Str::random().'_contract_pic.pdf';
                 // Storage::disk('contract')->put($image,$img);
-                $muncipal = time() . '.' . $file->getClientOriginalExtension();
+                $muncipal = 'saudi_'. time() . '.' . $file->getClientOriginalName();
                 $destinationPath = public_path() . '/muncipal/';
                 $file->move($destinationPath, $muncipal);
                 
