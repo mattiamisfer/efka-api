@@ -87,12 +87,12 @@
 
               <div class="row">
                   <div class="col-lg-3">
-                      <a  target="_blank" href="{{ url('/') }}/muncipal/{{$users->document->muncipal}}">{{ __('common.freelance')}}
+                      <a  target="_blank" href="{{ asset('muncipal/') }}/{{$users->document->muncipal}}">{{ __('common.freelance')}}
 
                       </a>
                   </div>
                   <div class="col-lg-3">
-                    <a  target="_blank"  href="{{ url('/') }}/commercial/{{$users->document->commercial}}">{{ __('common.saudi_national')}}
+                    <a  target="_blank"  href="{{ asset('muncipal/') }}/{{$users->document->commercial}}">{{ __('common.saudi_national')}}
 
 
 
