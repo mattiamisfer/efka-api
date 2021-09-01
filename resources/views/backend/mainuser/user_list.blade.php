@@ -87,17 +87,17 @@
 
               <div class="row">
                 {{-- muncipal --}}
-                @if(!empty($users->document->commercial))
+                @if(!empty($users->document->muncipal))
                   <div class="col-lg-3">
-                      <a  target="_blank" href="{{ asset('commercial/') }}/{{$users->document->commercial}}">{{ __('common.freelance')}}
+                      <a  target="_blank" href="{{ asset('muncipal/') }}/{{$users->document->commercial}}">{{ __('common.saudi_national')}}
 
                       </a>
                   </div>
 
                   @endif
-                  @if(!empty($users->document->muncipal))
+                  @if(!empty($users->document->commercial))
                   <div class="col-lg-3">
-                    <a  target="_blank"  href="{{ url('/') }}/muncipal/{{$users->document->muncipal}}">{{ __('common.saudi_national')}}
+                    <a  target="_blank"  href="{{ url('/') }}/commercial/{{$users->document->commercial}}">{{ __('common.freelance')}}
 
 
 
