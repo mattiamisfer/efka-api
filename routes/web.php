@@ -81,7 +81,7 @@ Route::get('/greeting/{locale}', function ($locale) {
  Route::group(['prefix'=>'admin', 'middleware'=>['isAdmin','auth','PreventBackHistory']], function(){
     Route::resource('dashboard', DashboardController::class, ['as' => 'dashboard']);
     // Route::resource('login', LoginControler::class);
-    Route::resource('product', ProductControler::class);
+    // Route::resource('product', ProductControler::class);
     Route::resource('category', CategoryController::class);
     Route::resource('user', MainUserController::class,['as' => 'user']);
     Route::get('/logout',[LoginControler::class,'logout'])->name('admin.logout');

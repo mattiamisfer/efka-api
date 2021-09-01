@@ -184,7 +184,7 @@ $sort_order = $request->sort_order;
         $attribute  =  $products->getTranslationsArray();
      
           
-            return view('backend.product.product_edit',compact('products','attribute','categories'));
+            return view('seller.product.product_edit',compact('products','attribute','categories'));
     }
 
     /**
@@ -197,6 +197,99 @@ $sort_order = $request->sort_order;
     public function update(Request $request, $id)
     {
         //
+
+
+
+
+        try {
+            $product = Product::find($id);
+            $product->product_model = $request->product_model; 
+            $product->product_sku ='null'; 
+            $product->product_ispn ='null';  
+            $product->product_quantity = $request->product_quantity; 
+            $product->product_min_order = 000;
+            $product->product_price = $request->product_price; 
+            $product->product_weight_value = $request->product_weight_value; 
+            $product->product_weight_type = $request->product_weight_type; 
+            $product->product_status = $request->product_status; 
+            $product->product_date = $request->date_available; 
+            $product->home_id = 1;
+            $product->category_id = $request->category_id; 
+            $product->user_id = Auth::user()->id;
+    
+            // foreach($_POST as $key=>$value)
+            // {
+            //   echo  "'$key'";
+            //   echo ",";
+            // }
+    
+            //return $request->all();
+    
+    
+            if($request->hasFile('main_image')) {
+          
+                $file = $request->file('main_image');
+              
+                // $img =  ImageManagerStatic::make($request->file('contract'));
+                // $contract = Str::random().'_contract_pic.pdf';
+                // Storage::disk('contract')->put($image,$img);
+                $bank_path = time() . '.' . $file->getClientOriginalExtension();
+                $destinationPath = public_path() . '/main_product/';
+                $file->move($destinationPath, $bank_path);
+                
+         
+        }  else  {
+            $bank_path =  $request->img_exist;
+        }
+        $product->image =  $bank_path;
+    
+       // return $destinationPath;
+            foreach (['en', 'ar'] as $locale) {
+                $product->translateOrNew($locale)->product_name = $request->{$locale}['product_name'];
+                $product->translateOrNew($locale)->product_description = $request->{$locale}['product_description'];
+                $product->translateOrNew($locale)->product_meta_tag_title = $request->{$locale}['product_meta_tag_title'];
+                $product->translateOrNew($locale)->product_meta_tag_description = $request->{$locale}['product_meta_tag_description'];
+                $product->translateOrNew($locale)->product_meta_tag_keyword = $request->{$locale}['product_meta_tag_keyword'];
+             }
+              $product->save();
+            //  $allowedfileExtension=['pdf','jpg','png','docx'];
+            //  $files = $request->file('main_image_gallery');
+    
+    //         if ($request->hasfile('main_image_gallery')) {
+    //             $images = $request->file('main_image_gallery');
+    
+    //             foreach($images as $key => $image) {
+    //                 $name = $image->getClientOriginalName();
+    //                  $path = $image->storeAs('uploads', $name, 'public');
+    // $sort_order = $request->sort_order;
+           
+    
+    //                 $product_gallery = new ProductGallery();
+    //                 $product_gallery->sort_order =   $sort_order[$key];
+    //                 $product_gallery->product_id = $product->id;
+    //                 $product_gallery->filepath ='/storage/'.$path;
+    //                 $product_gallery->save();
+    
+    //             }
+    //          }
+           
+              
+    
+    
+        //  return $product->id;    
+        return  back()->with('success', 'SucceessFully Added...');  
+        } catch(\Exception $e) {
+          return back()->with('failed', 'Some error Occured'.$e->getMessage());  
+        }
+
+
+
+
+
+
+
+
+
     }
 
     /**
